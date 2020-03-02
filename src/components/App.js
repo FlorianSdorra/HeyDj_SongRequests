@@ -1,15 +1,13 @@
 import React from "react";
 import "../scss/App.scss";
-import Navigation from "./Navigation";
-import Main from "./Main";
+import FullPage from "./fullPage";
 import { connect } from "react-redux";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navigation></Navigation>
-        <Main></Main>
+        <FullPage></FullPage>
       </div>
     );
   }

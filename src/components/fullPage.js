@@ -1,20 +1,19 @@
 import React from "react";
-import Events from "./Events";
 import { connect } from "react-redux";
 
-function Main() {
-  return (
-    <div className="main">
-      <Events></Events>
-      <div className="getting-started">
-        <button className="btn-start">GET STARTED</button>
+class FullPage extends React.Component {
+  render() {
+    return (
+      <div className="main-container">
+        <div className="fullpage"></div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => {
   return state;
 };
 
-export default connect(mapStateToProps, {})(Main);
+export default connect(mapStateToProps, {})(FullPage)
+
