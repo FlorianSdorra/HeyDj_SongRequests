@@ -9,8 +9,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <div className="logo"><img src={logo} alt="logo hey dj"></img></div>
-          <button className="login-button">Login</button>
+          <div className="logo">
+            <img src={logo} alt="logo hey dj"></img>
+          </div>
+          <div className="login-button-wrap">
+            <button className="login-button">Login</button>
+          </div>
         </header>
         
         <footer>
