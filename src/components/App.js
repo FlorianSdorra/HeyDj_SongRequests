@@ -8,17 +8,19 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <div className="logo">
-            <img src={logo} alt="logo hey dj"></img>
-          </div>
-          <div className="login-button-wrap">
-            <button className="login-button">Login</button>
-          </div>
-        </header>
-        
+          <header>
+            <div className="logo-heydj">
+              <img src={logo} alt="logo hey dj"></img>
+            </div>
+            <div className="login-button-wrap">
+              <button className="login-button">Login</button>
+            </div>
+          </header>
+        <main></main>
         <footer>
-          <p>Contact &amp; Imprint</p>
+          <div>
+          <a href="#">Contact &amp; Imprint</a>
+          </div>
         </footer>
       </div>
     );
