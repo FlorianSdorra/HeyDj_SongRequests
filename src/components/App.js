@@ -12,11 +12,15 @@ class App extends React.Component {
             <div className="logo-heydj">
               <img src={logo} alt="logo hey dj"></img>
             </div>
-            <div className="login-button-wrap">
-              <button className="login-button">Login</button>
+            <div className="header-right-wrap">
+              {/* <button className="login-button">Login</button> */}
+              {/* <i className="exit fas fa-times"></i> */}
+              <i className="settings fas fa-cog"></i>
             </div>
           </header>
-        <main></main>
+        <main>
+          
+        </main>
         <footer>
           <div>
           <a href="#">Contact &amp; Imprint</a>
