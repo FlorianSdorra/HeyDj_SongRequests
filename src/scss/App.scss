@@ -100,18 +100,18 @@ body {
               text-align: center;          
               -webkit-background-clip: text;
             
-                &:hover {
-                  border: 3px solid #89a0d2;
-                  background-color: #89a0d2;
-                  font-family: 'Oswald';
-                  font-size: large;
-                  font-weight: bold;
-                  color: black;
-                }
-              
-                &:focus {
-                  outline: none !important;
-                }
+              &:hover {
+                border: 3px solid #89a0d2;
+                background-color: #89a0d2;
+                font-family: 'Oswald';
+                font-size: large;
+                font-weight: bold;
+                color: black;
+              }
+            
+              &:focus {
+                outline: none !important;
+              }
             }
           }
         }
