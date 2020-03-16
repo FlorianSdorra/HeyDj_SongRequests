@@ -39,6 +39,12 @@ class FullPage extends React.Component {
                             <div className="section">
                                 <p>Section 2</p>
                             </div>
+                            <div className="section">
+                                <p>Section 2</p>
+                            </div>
+                            <div className="section">
+                                <p>Section 2</p>
+                            </div>
                         </ReactFullpage.Wrapper>
                     );
                 }}
