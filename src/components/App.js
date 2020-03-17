@@ -15,7 +15,7 @@ class App extends React.Component {
             <div className="header-right-wrap">
               {/* <button className="login-button">Login</button> */}
               {/* <i className="exit fas fa-times"></i> */}
-              <i className="settings fas fa-cog"></i>
+              <i className="settings fas fa-cog"></i> 
             </div>
           </header>
         <main>
