@@ -1,3 +1,49 @@
+/* 
+    Created on : 2019-03
+    Author     : Florian
+*/
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap");
+
+/* FONT STYLES */
+.center {
+    text-align: center;
+}
+.bold {
+    font-weight: 700;
+}
+.reg {
+    font-weight: 400;
+}
+.light {
+    font-weight: 300;
+}
+
+.fs50 {
+    font-size: 25px;
+}
+.fs32 {
+    font-size: 23px;
+}
+.fs30 {
+    font-size: 20px;
+}
+.fs24 {
+    font-size: 18px;
+}
+.fs18 {
+    font-size: 14px;
+}
+.fs16 {
+    font-size: 16px;
+}
+.fs14 {
+    font-size: 14px;
+}
+
+/* END FONT STYLES */
+
 // COLORS
 $matisse: #204796;
 $dodger-blue: #4670b6;
@@ -11,411 +57,267 @@ $sunset-orange: #ef4540;
 $casablanca: #f2ab42;
 $pirate-black: #353837;
 $background-black: #222423;
+// End Colors
 
-:root {
-    --gradient: linear-gradient(20deg, #89a0d2, #df7b9d);
+/* DARK Theme for NAV */
+#fp-nav {
+    display: none;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: $alabaster !important;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span {
+    background: $alabaster;
+}
+#fp-nav ul li a span {
+    background: $alabaster;
+    border: $alabaster solid 1px;
+}
+#fp-nav ul li:hover a span {
+    background: $alabaster;
+}
+#fp-nav ul li .fp-tooltip {
+    color: $alabaster;
+}
+/* END DARK Theme for NAV */
+
+/* General Styles */
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+p {
+    margin: 2.6041vh 0;
 }
 
 body {
-    margin: 0;
-    width: 100%;
-}
-
-.App {
-    margin: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #222423;
-    font-family: "Oswald";
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 300;
     color: $alabaster;
-}
-
-// SCSS FOR LANDING PAGE LOGO SECTION PUZZLE PIECE //
-/* Extra small devices (phones, less than 768px) */
-
-.landing {
-    width: 100%;
-    // height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-section-wrapper {
-    width: 75%;
-    height: 55%;
-    border: 2px solid $deep-blush;
     background-color: $pirate-black;
-
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    box-sizing: border-box;
 }
 
-.logo-circle {
-    width: 160px;
-    height: 160px;
-    background-image: url("../assets/HeyDjGhost-03.png");
-    background-position: center;
-    background-size: contain;
-    border-radius: 50%;
+.del {
+    display: none;
 }
+/* END General Styles */
 
-.logo-section-wrapper > h3 {
-    margin: 0;
-    font-family: "Oswald";
-    font-weight: 200;
-    font-size: 1.1rem;
-    color: #fcfdfd;
-    letter-spacing: 1.2px;
-    font-style: italic;
-}
-
-.icon-wrap {
-    padding: 10px;
-    border-radius: 50%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: grey;
-}
-
-.search-form-input-border {
-    position: relative;
-    font-family: "FontAwesome";
-    border-radius: 4px;
-    border: 1px solid black;
-    box-shadow: 2px 1.5px #89a0d2;
-}
-
-.search-form-input {
-    font-size: medium;
-    color: #89a0d2;
-    padding: 8px 12px;
-    border-style: none;
-    background-color: #222423e1;
-    width: 45vw;
-}
-
-.search-icon {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    color: grey;
-}
-
-.search-form-input:focus {
-    outline: #89a0d2;
-}
-
-@media (min-width: 768px) {
-    .logo-section-wrapper {
-        width: 60%;
-    }
-    .logo-circle {
-        width: 180px;
-        height: 180px;
-    }
-    .search-form-input {
-        width: 30vw;
-    }
-    .logo-section-wrapper > h3 {
-        font-size: 1.3rem;
-    }
-}
-
-// SCSS FOR ACTION BUTTON PUZZLE PIECE //
-
-.action-button-wrap {
-    margin-top: 7%;
-}
-
-.action-button {
-    padding: 12px 25px;
-    min-width: 55vw;
-    border: 3px solid #89a0d2;
-    box-shadow: 3px 3px 3px 1px black;
-    text-align: center;
-    border-radius: 7px;
-    background-color: #353837e3;
-    font-family: "Oswald";
-
-    box-sizing: border-box;
-}
-.action-button > p {
-    margin: 0;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 1.1;
-    letter-spacing: 1.5px;
-    background-image: var(--gradient);
-    background-clip: text;
-    color: transparent;
-    background-position: left;
-    font-style: italic;
-}
-
-.action-button:hover {
-    border: 3px solid #89a0d2;
-    background-color: #89a0d2;
-    font-family: "Oswald";
-    font-size: large;
-    font-weight: bold;
-    color: black;
-}
-
-.action-button:focus {
-    outline: none !important;
-}
-
-// /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .action-button-wrap {
-        margin-top: 4%;
-    }
-    .action-button {
-        min-width: 40vw;
-    }
-    .action-button > p {
-        font-size: 30px;
-    }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-// LIST-WRAPPER FOR SEARCH-RESULT-LIST-ITEM PUZZLE PIECE //
-
-.result-list-wrap {
-    width: 100%;
-    // for height conditional rendering for vh regarding amount of results
-    height: 100%;
-    background-color: $background-black;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.result-list-item {
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-
-    border: 1px solid black;
-    border-radius: 5px;
-
-    padding: 8px 10px;
-
-    box-shadow: 2px 2px 2px black;
-    background: $pirate-black;
-
-    box-sizing: border-box;
-
-    margin: 5px;
-}
-
-.result-image {
-    width: 70px;
-    height: 70px;
-    background-image: url("../assets/HeyDjGhost-03.png");
-    background-size: contain;
-}
-
-.result-info-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: right;
-}
-
-.result-info-container > p {
-    font-size: 1rem;
-    letter-spacing: 0.1px;
-}
-
-.result-info-container > * {
-    margin: 0;
-}
-
-@media (min-width: 768px) {
-    .result-image {
-        width: 90px;
-        height: 90px;
-    }
-    .result-list-item {
-        width: 60%;
-        border-radius: 60px 5px 5px 60px;
-    }
-    .result-list-item:hover {
-        width: 62%;
-    }
-    .result-info-container > p {
-        font-size: 1.2rem;
-        letter-spacing: 0.2px;
-    }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .result-image {
-        width: 100px;
-        height: 100px;
-    }
-    .result-info-container > p {
-        font-size: 1.4rem;
-        line-height: 1.6;
-        padding: 1.5px;
-        letter-spacing: 0.2px;
-    }
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
-
-// SCSS for small Search button
-
-.small-button-wrap {
-    width: 100%;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.small-button-search {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 5px;
-}
-
-.small-button-search > * {
-}
-
-.small-button {
-    margin-left: 12.5px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: $pirate-black;
-    border-style: none;
-
-    display: flex;
-    justify-content: center;
-}
-
-.small-button > i {
-    padding: 5px;
-}
-
-// My Styles
-
-html,
-#root {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin: 0;
-    box-sizing: border-box;
-    // background-image: url(https://images.unsplash.com/photo-1532452119098-a3650b3c46d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-    // background-size: cover;
-    #fp-nav ul li a span,
-    .fp-slidesNav ul li a span {
-        background: #ed4141 !important;
-    }
-}
-.App {
-    #fullpage {
-        width: 100%;
-        height: 100%;
-        // background-color: crimson;
-        .section {
-            // width: 100%;
-            // height: 100%;
-            div {
-                // width: 100%;
-                background-color: $pirate-black;
-                p {
-                    // width: 100%;
-                    // height: 100%;
-                    // background-color: crimson;
+.section {
+    .container {
+        width: 80%;
+        // width: 70%;
+        margin: 0 auto;
+        padding-top: 30px;
+        .logo {
+            img {
+                height: 10vh;
+                width: auto;
+                // height: 12vh;
+                // width: auto;
+            }
+        }
+        .introBox {
+            margin: 2vh 0px;
+            // margin: 4vh 0px;
+            padding: 2vh;
+            // border: 1px solid #faa866;
+            p {
+                margin: 1vh 0;
+            }
+        }
+        .introText {
+            padding: 0 20px;
+            h2 {
+                line-height: 125%;
+            }
+        }
+        .introButton {
+            padding-top: 20px;
+            .arrow {
+                width: 50px;
+                height: 50px;
+                margin: 0px auto;
+                position: relative;
+                i {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    border: solid #348c9b;
+                    border-width: 0 4px 4px 0;
+                    display: inline-block;
+                    padding: 15px;
+                }
+                .down {
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    animation: blink 5s infinite, move 1s infinite;
+                    -webkit-animation: blink 5s infinite, move 1s infinite;
+                    -moz-animation: blink 5s infinite, move 1s infinite;
                 }
 
-                .center {
-                    // background-color: blue;
-                    line-height: 1.15;
-                    font-family: "Roboto Slab";
-                    font-style: normal;
-                    font-weight: 300;
-                    color: #ffffff;
-                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                    text-align: center;
-                    button {
-                        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                        line-height: 1.15;
-                        margin: 0;
-                        overflow: visible;
-                        text-transform: none;
-                        -webkit-appearance: button;
-                        font-size: 2.0833vh;
-                        font-family: "Roboto Slab";
-                        font-weight: 400;
-                        background: none;
-                        padding: 10px 40px;
-                        border-radius: 30px;
-                        cursor: pointer;
-                        margin-top: 1vh;
-                        border: 1px solid #ffffff;
-                        color: #ffffff;
+                @keyframes blink {
+                    0% {
+                        border-color: #348c9b;
                     }
-                    .arrow {
-                        line-height: 1.15;
-                        font-family: "Roboto Slab";
-                        font-style: normal;
-                        font-weight: 300;
-                        color: #ffffff;
-                        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                        text-align: center;
-                        margin-top: 1vh;
-                        padding-bottom: 1vh;
-                        .bt-down {
-                            line-height: 1.15;
-                            font-family: "Roboto Slab";
-                            font-weight: 300;
-                            color: #ffffff;
-                            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                            text-align: center;
-                            border: solid #ffffff;
-                            border-width: 0 2px 2px 0;
-                            display: inline-block;
-                            padding: 10px;
-                            transform: rotate(45deg);
-                            -webkit-transform: rotate(45deg);
-                            cursor: pointer;
-                        }
+                    25% {
+                        border-color: #a6d6b0;
+                    }
+                    50% {
+                        border-color: #faa866;
+                    }
+                    75% {
+                        border-color: #f15b4c;
+                    }
+                    100% {
+                        border-color: #348c9b;
+                    }
+                }
+                @-webkit-keyframes blink {
+                    0% {
+                        border-color: #348c9b;
+                    }
+                    25% {
+                        border-color: #a6d6b0;
+                    }
+                    50% {
+                        border-color: #faa866;
+                    }
+                    75% {
+                        border-color: #f15b4c;
+                    }
+                    100% {
+                        border-color: #348c9b;
+                    }
+                }
+                @-moz-keyframes blink {
+                    0% {
+                        border-color: #348c9b;
+                    }
+                    25% {
+                        border-color: #a6d6b0;
+                    }
+                    50% {
+                        border-color: #faa866;
+                    }
+                    75% {
+                        border-color: #f15b4c;
+                    }
+                    100% {
+                        border-color: #348c9b;
+                    }
+                }
+                @keyframes move {
+                    0% {
+                        transform: translate(0px, 0px) rotate(45deg);
+                        animation-timing-function: ease-in;
+                    }
+                    100% {
+                        transform: translate(0px, 25px) rotate(45deg);
+                    }
+                }
+                @-webkit-keyframes move {
+                    0% {
+                        transform: translate(0px, 0px) rotate(45deg);
+                        animation-timing-function: ease-in;
+                    }
+                    100% {
+                        transform: translate(0px, 25px) rotate(45deg);
+                    }
+                }
+                @-moz-keyframes move {
+                    0% {
+                        transform: translate(0px, 0px) rotate(45deg);
+                        animation-timing-function: ease-in;
+                    }
+                    100% {
+                        transform: translate(0px, 25px) rotate(45deg);
                     }
                 }
             }
         }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #fp-nav {
+        display: block;
+    }
+    .fs50 {
+        font-size: 6.5104vh;
+    }
+    .fs32 {
+        font-size: 4.1666vh;
+    }
+    .fs30 {
+        font-size: 3.9062vh;
+    }
+    .fs24 {
+        font-size: 3.125vh;
+    }
+    .fs18 {
+        font-size: 2.3437vh;
+    }
+    .fs16 {
+        font-size: 2.0833vh;
+    }
+    .fs14 {
+        font-size: 1.5625vh;
+    }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .fs50 {
+        font-size: 6.5104vh;
+    }
+    .fs32 {
+        font-size: 4.1666vh;
+    }
+    .fs30 {
+        font-size: 3.9062vh;
+    }
+    .fs24 {
+        font-size: 3.125vh;
+    }
+    .fs18 {
+        font-size: 2.3437vh;
+    }
+    .fs16 {
+        font-size: 2.0833vh;
+    }
+    .fs14 {
+        font-size: 1.5625vh;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .fs50 {
+        font-size: 6.5104vh;
+    }
+    .fs32 {
+        font-size: 4.1666vh;
+    }
+    .fs30 {
+        font-size: 3.9062vh;
+    }
+    .fs24 {
+        font-size: 3.125vh;
+    }
+    .fs18 {
+        font-size: 2.3437vh;
+    }
+    .fs16 {
+        font-size: 2.0833vh;
+    }
+    .fs14 {
+        font-size: 1.5625vh;
     }
 }
