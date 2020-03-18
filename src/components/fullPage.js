@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
+import LandingPage from "./LandingPage";
 
 class FullPage extends React.Component {
     render() {
@@ -16,22 +17,21 @@ class FullPage extends React.Component {
                     return (
                         <ReactFullpage.Wrapper>
                             <div className="section">
-                                <p>Section 1 (welcome to fullpage.js)</p>
-                                {/* <button
-                                    onClick={() =>
-                                        fullpageApi.moveSectionDown()
-                                    }
-                                >
-                                    Click me to move down
-                                </button> */}
-                                <div
-                                    className="center"
-                                    onClick={() =>
-                                        fullpageApi.moveSectionDown()
-                                    }
-                                >
-                                    <button>About</button>
-                                    <div className="arrow">
+                                <LandingPage />
+                                <div className="center">
+                                    <button
+                                        onClick={() =>
+                                            fullpageApi.moveSectionDown()
+                                        }
+                                    >
+                                        About
+                                    </button>
+                                    <div
+                                        className="arrow"
+                                        onClick={() =>
+                                            fullpageApi.moveSectionDown()
+                                        }
+                                    >
                                         <i className="bt-down"></i>
                                     </div>
                                 </div>
