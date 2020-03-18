@@ -28,7 +28,10 @@ class App extends React.Component {
             <p>Fvck Genre, King Kong Kicks, 27.3.3030, Musik und Frieden </p>
             <p>Everything your heart desires.</p>
             <br></br>
+          </section>
+          <section className="add-your-song">
             <h1>Add your song to the request list.</h1>
+            <button className="add-song-button">+</button>
           </section>
         </main>
         <footer>

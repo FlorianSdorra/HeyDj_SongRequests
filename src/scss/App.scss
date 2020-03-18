@@ -134,7 +134,10 @@ body {
 						margin: 25px;
 						text-align: center;
 					}
-
+				}
+				
+				.add-your-song{
+					text-align: center;
 					h1 {
 						font-family: "Oswald";
 						font-size: 0.9rem;
@@ -142,8 +145,21 @@ body {
 						letter-spacing: 0.05rem;
 						text-align: center;
 					}
+					.add-song-button{
+						background: dodgerblue;
+						border: none;
+						border-radius: 50px;
+						color: $alabaster;
+						font-size: 1.5rem;
+						font-weight: bold;
+						height: 30px;
+						margin-top: 1.5rem;
+						text-align: center;
+						width: 150px;
+					}
 				}
 			}
+		}
 
 			footer {
 				align-items: center;
@@ -163,7 +179,7 @@ body {
 			}
 		}
 	}
-}
+
 
 // MEDIA QUERIES
 
