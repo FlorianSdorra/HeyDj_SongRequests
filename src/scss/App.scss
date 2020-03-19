@@ -1,12 +1,58 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+/* 
+    Created on : 2019-03
+    Author     : Florian
+*/
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
 
+/* FONT STYLES */
+.center {
+    text-align: center;
+}
+.bold {
+    font-weight: 700;
+}
+.reg {
+    font-weight: 400;
+}
+.light {
+    font-weight: 300;
+}
+
+.fs50 {
+    font-size: 25px;
+}
+.fs32 {
+    font-size: 23px;
+}
+.fs30 {
+    font-size: 20px;
+}
+.fs24 {
+    font-size: 18px;
+}
+.fs18 {
+    font-size: 14px;
+}
+.fs16 {
+    font-size: 16px;
+}
+.fs14 {
+    font-size: 14px;
+}
+
+/* END FONT STYLES */
+
+// COLORS
 $pirate-black: #353837;
 $matisse: #204796;
 $dodger-blue: #4670b6;
 $portage: #89a0d2;
 $bright-turquoise: #74ccd6;
 $aqua-forest: #5ca083;
+$alabaster: #fcfdfd;
 $cosmic: #79365e;
 $deep-blush: #df7b9d;
 $sunset-orange: #ef4540;
@@ -15,321 +61,556 @@ $alabaster: #fcfdfd;
 $background-black: #222423;
 
 :root {
-	--gradient: linear-gradient(20deg, #89a0d2, #df7b9d);
+    --gradient: linear-gradient(20deg, #89a0d2, #df7b9d);
 }
 
 html,
 body {
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	background-color: $background-black;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background-black;
 
-	#root {
-		height: 100%;
-		width: 100%;
+    #root {
+        height: 100%;
+        width: 100%;
 
-		.App {
-			height: 100%;
-			margin: 0;
-			width: 100%;
+        .App {
+            height: 100%;
+            margin: 0;
+            width: 100%;
 
-			header {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: nowrap;
-				justify-content: space-between;
-				align-items: center;
-				height: 80px;
-				padding: 10px;
+            header {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                height: 80px;
+                padding: 10px;
 
-				.logo-heydj {
-					height: 100%;
-					width: 100%;
-					img {
-						height: 60%;
-						margin-left: 5%;
-						margin-top: 3%;
-						width: auto;
-					}
-				}
+                .logo-heydj {
+                    height: 100%;
+                    width: 100%;
+                    img {
+                        height: 60%;
+                        margin-left: 5%;
+                        margin-top: 3%;
+                        width: auto;
+                    }
+                }
 
-				.header-right-wrap {
-					display: flex;
+                .header-right-wrap {
+                    display: flex;
 
-					.login-button {
-						background: #353837e3;
-						background-image: var(--gradient);
-						background-position: left;
-						border: 3px solid #89a0d2;
-						border-radius: 7px;
-						box-shadow: 3px 3px 3px 1px black;
-						box-sizing: border-box;
-						color: transparent;
-						font-family: "Oswald";
-						font-size: 15px;
-						font-weight: bold;
-						letter-spacing: 1.5px;
-						line-height: 1.1;
-						margin-bottom: 13%;
-						margin-right: 15px;
-						min-width: 13vw;
-						padding: 10px 30px;
-						-webkit-background-clip: text;
+                    .login-button {
+                        background: #353837e3;
+                        background-image: var(--gradient);
+                        background-position: left;
+                        border: 3px solid #89a0d2;
+                        border-radius: 7px;
+                        box-shadow: 3px 3px 3px 1px black;
+                        box-sizing: border-box;
+                        color: transparent;
+                        font-family: "Oswald";
+                        font-size: 15px;
+                        font-weight: bold;
+                        letter-spacing: 1.5px;
+                        line-height: 1.1;
+                        margin-bottom: 13%;
+                        margin-right: 15px;
+                        min-width: 13vw;
+                        padding: 10px 30px;
+                        background-clip: text;
+                        -webkit-background-clip: text;
 
-						&:hover {
-							background: #89a0d2;
-							font-family: "Oswald";
-							// font-size: large;
-							font-weight: bold;
-							color: $pirate-black;
-						}
+                        &:hover {
+                            background: #89a0d2;
+                            font-family: "Oswald";
+                            // font-size: large;
+                            font-weight: bold;
+                            color: $pirate-black;
+                        }
 
-						&:focus {
-							outline: none !important;
-						}
-					}
+                        &:focus {
+                            outline: none !important;
+                        }
+                    }
 
-					.exit {
-						color: $sunset-orange;
-						font-size: 2.5em;
-						margin-bottom: 30%;
-						padding-right: 17px;
-					}
+                    .exit {
+                        color: $sunset-orange;
+                        font-size: 2.5em;
+                        margin-bottom: 30%;
+                        padding-right: 17px;
+                    }
 
-					.settings {
-						color: white;
-						font-size: 2.5em;
-						height: 100px;
-						margin-top: 50px;
-						text-align: center;
-						width: 80px;
-					}
-				}
-			}
+                    .settings {
+                        color: white;
+                        font-size: 2.5em;
+                        height: 100px;
+                        margin-top: 50px;
+                        text-align: center;
+                        width: 80px;
+                    }
+                }
+            }
 
-			main {
-				width: 100%;
-				height: 80%;
-				// display: flex;
-				// flex-direction: row;
-				// flex-wrap: nowrap;
-				// justify-content: space-between;
-				// align-items: center;
-				color: $alabaster;
-				// background-color: lightpink;
-				.banner {
-					height: 20%;
-					background-color: rosybrown;
-					img {
-						height: 100%;
-						width: 100%;
-					}
-				}
+            main {
+                width: 100%;
+                height: 80%;
+                // display: flex;
+                // flex-direction: row;
+                // flex-wrap: nowrap;
+                // justify-content: space-between;
+                // align-items: center;
+                color: $alabaster;
+                // background-color: lightpink;
+                .banner {
+                    height: 20%;
+                    background-color: rosybrown;
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
 
-				.description-event {
-					p {
-						font-size: 1rem;
-						font-family: "Oswald";
-						margin: 25px;
-						text-align: center;
-					}
-				}
+                .description-event {
+                    p {
+                        font-size: 1rem;
+                        font-family: "Oswald";
+                        margin: 25px;
+                        text-align: center;
+                    }
+                }
 
-				.add-your-song {
-					text-align: center;
-					h1 {
-						font-family: "Oswald";
-						font-size: 0.9rem;
-						font-weight: bold;
-						letter-spacing: 0.05rem;
-						text-align: center;
-					}
-					.add-song-button {
-						background: dodgerblue;
-						border: none;
-						border-radius: 50px;
-						color: $alabaster;
-						font-size: 1.5rem;
-						font-weight: bold;
-						height: 30px;
-						margin-top: 1.5rem;
-						text-align: center;
-						width: 150px;
-					}
+                .add-your-song {
+                    text-align: center;
+                    h1 {
+                        font-family: "Oswald";
+                        font-size: 0.9rem;
+                        font-weight: bold;
+                        letter-spacing: 0.05rem;
+                        text-align: center;
+                    }
+                    .add-song-button {
+                        background: dodgerblue;
+                        border: none;
+                        border-radius: 50px;
+                        color: $alabaster;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        height: 30px;
+                        margin-top: 1.5rem;
+                        text-align: center;
+                        width: 150px;
+                    }
 
-					.add-button-wishlist {
-						background: dodgerblue;
-						border: none;
-						border-radius: 50px;
-						color: $alabaster;
-						font-size: 1.3rem;
-						font-weight: bold;
-						height: 30px;
-						margin-top: 1.5rem;
-						text-align: center;
-						width: 40px;
-					}
-				}
-			}
-		}
+                    .add-button-wishlist {
+                        background: dodgerblue;
+                        border: none;
+                        border-radius: 50px;
+                        color: $alabaster;
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        height: 30px;
+                        margin-top: 1.5rem;
+                        text-align: center;
+                        width: 40px;
+                    }
+                }
+            }
+        }
 
-		footer {
-			align-items: center;
-			display: flex;
-			flex-direction: row;
-			font-size: 30px;
-			font-family: "Oswald";
-			flex-wrap: nowrap;
-			height: 10%;
-			justify-content: center;
-			width: 100%;
-			a:link,
-			a:visited {
-				color: $alabaster;
-				text-decoration: none;
-			}
-		}
-	}
+        footer {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            font-size: 30px;
+            font-family: "Oswald";
+            flex-wrap: nowrap;
+            height: 10%;
+            justify-content: center;
+            width: 100%;
+            a:link,
+            a:visited {
+                color: $alabaster;
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 // MEDIA QUERIES
 
 @media (min-width: 768px) {
-	html,
-	body {
-		#root {
-			.App {
-				header {
-					.logo-heydj {
-						margin-bottom: 40px;
-						img {
-							height: 80px;
-							margin-left: 0;
-						}
-					}
+    html,
+    body {
+        #root {
+            .App {
+                header {
+                    .logo-heydj {
+                        margin-bottom: 40px;
+                        img {
+                            height: 80px;
+                            margin-left: 0;
+                        }
+                    }
 
-					.header-right-wrap {
-						.login-button {
-							font-size: 25px;
-							margin-bottom: 0%;
-							margin-top: 10px;
-						}
-						.exit {
-							font-size: 3em;
-							margin-right: 30px;
-							margin-top: 45%;
-						}
+                    .header-right-wrap {
+                        .login-button {
+                            font-size: 25px;
+                            margin-bottom: 0%;
+                            margin-top: 10px;
+                        }
+                        .exit {
+                            font-size: 3em;
+                            margin-right: 30px;
+                            margin-top: 45%;
+                        }
 
-						.settings {
-							font-size: 3em;
-							height: 100px;
-							margin-top: 45px;
-							margin-right: 10%;
-						}
-					}
-				}
+                        .settings {
+                            font-size: 3em;
+                            height: 100px;
+                            margin-top: 45px;
+                            margin-right: 10%;
+                        }
+                    }
+                }
 
-				main {
-					background-color: green;
-					.description-event {
-						p {
-							font-size: 1.2rem;
-							margin: 30px;
-						}
-						h1 {
-							font-size: 1rem;
-							letter-spacing: 0.06rem;
-						}
-					}
-				}
-			}
-		}
-	}
+                main {
+                    background-color: green;
+                    .description-event {
+                        p {
+                            font-size: 1.2rem;
+                            margin: 30px;
+                        }
+                        h1 {
+                            font-size: 1rem;
+                            letter-spacing: 0.06rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 992px) {
-	html,
-	body {
-		#root {
-			.App {
-				header {
-					.logo-heydj {
-						margin-left: 0;
-						margin-top: 2%;
-						img {
-							margin-top: 15px;
-							margin-left: 1%;
-						}
-					}
-					.header-right-wrap {
-						.login-button {
-							margin-right: 40px;
-						}
+    html,
+    body {
+        #root {
+            .App {
+                header {
+                    .logo-heydj {
+                        margin-left: 0;
+                        margin-top: 2%;
+                        img {
+                            margin-top: 15px;
+                            margin-left: 1%;
+                        }
+                    }
+                    .header-right-wrap {
+                        .login-button {
+                            margin-right: 40px;
+                        }
 
-						.exit {
-							font-size: 3.5em;
-							margin-right: 50px;
-						}
+                        .exit {
+                            font-size: 3.5em;
+                            margin-right: 50px;
+                        }
 
-						.settings {
-							font-size: 3em;
-							height: 100px;
-							margin-top: 60px;
-						}
-					}
-				}
+                        .settings {
+                            font-size: 3em;
+                            height: 100px;
+                            margin-top: 60px;
+                        }
+                    }
+                }
 
-				main {
-					background-color: rgb(126, 126, 182);
-					.description-event {
-						p {
-							font-size: 1.7rem;
-							margin-top: 5rem;
-						}
-						h1 {
-							font-size: 2rem;
-							margin-top: 4rem;
-						}
-					}
-				}
-			}
-		}
-	}
+                main {
+                    background-color: rgb(126, 126, 182);
+                    .description-event {
+                        p {
+                            font-size: 1.7rem;
+                            margin-top: 5rem;
+                        }
+                        h1 {
+                            font-size: 2rem;
+                            margin-top: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1200px) {
-	html,
-	body {
-		#root {
-			.App {
-				header {
-					.logo-heydj {
-						img {
-							height: 90px;
-						}
-					}
+    html,
+    body {
+        #root {
+            .App {
+                header {
+                    .logo-heydj {
+                        img {
+                            height: 90px;
+                        }
+                    }
 
-					.header-right-wrap {
-						.login-button {
-							margin-top: 0;
-						}
-					}
-				}
-				main {
-					background-color: rosybrown;
-					.description-event {
-						p {
-							font-size: 1.7rem;
-							margin-top: 5rem;
-						}
-						h1 {
-							font-size: 2rem;
-							margin-top: 4rem;
-						}
-					}
-				}
-			}
-		}
-	}
+                    .header-right-wrap {
+                        .login-button {
+                            margin-top: 0;
+                        }
+                    }
+                }
+                main {
+                    background-color: rosybrown;
+                    .description-event {
+                        p {
+                            font-size: 1.7rem;
+                            margin-top: 5rem;
+                        }
+                        h1 {
+                            font-size: 2rem;
+                            margin-top: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End Colors
+
+/* DARK Theme for NAV */
+#fp-nav {
+    display: none;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: $alabaster !important;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span {
+    background: $alabaster;
+}
+#fp-nav ul li a span {
+    background: $alabaster;
+    border: $alabaster solid 1px;
+}
+#fp-nav ul li:hover a span {
+    background: $alabaster;
+}
+#fp-nav ul li .fp-tooltip {
+    color: $alabaster;
+}
+/* END DARK Theme for NAV */
+
+/* General Styles */
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+p {
+    margin: 2.6041vh 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: $alabaster;
+    background-color: $pirate-black;
+}
+
+.del {
+    display: none;
+}
+/* END General Styles */
+
+.container {
+    width: 80%;
+    // width: 70%;
+    margin: 0 auto;
+    padding-top: 30px;
+    .logo {
+        img {
+            height: 10vh;
+            width: auto;
+            // height: 12vh;
+            // width: auto;
+        }
+    }
+    .introBox {
+        margin: 2vh 0px;
+        // margin: 4vh 0px;
+        padding: 2vh;
+        // border: 1px solid #faa866;
+        p {
+            margin: 1vh 0;
+        }
+    }
+    .introText {
+        padding: 0 20px;
+        h2 {
+            line-height: 125%;
+        }
+    }
+    .introButton {
+        padding-top: 20px;
+        .arrow {
+            width: 50px;
+            height: 50px;
+            margin: 0px auto;
+            position: relative;
+            i {
+                position: relative;
+                left: 0;
+                top: 0;
+                border: solid #348c9b;
+                border-width: 0 4px 4px 0;
+                display: inline-block;
+                padding: 15px;
+            }
+            .down {
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                animation: blink 5s infinite, move 1s infinite;
+                -webkit-animation: blink 5s infinite, move 1s infinite;
+                -moz-animation: blink 5s infinite, move 1s infinite;
+            }
+
+            @keyframes blink {
+                0% {
+                    border-color: #348c9b;
+                }
+                25% {
+                    border-color: #a6d6b0;
+                }
+                50% {
+                    border-color: #faa866;
+                }
+                75% {
+                    border-color: #f15b4c;
+                }
+                100% {
+                    border-color: #348c9b;
+                }
+            }
+            @-webkit-keyframes blink {
+                0% {
+                    border-color: #348c9b;
+                }
+                25% {
+                    border-color: #a6d6b0;
+                }
+                50% {
+                    border-color: #faa866;
+                }
+                75% {
+                    border-color: #f15b4c;
+                }
+                100% {
+                    border-color: #348c9b;
+                }
+            }
+            @-moz-keyframes blink {
+                0% {
+                    border-color: #348c9b;
+                }
+                25% {
+                    border-color: #a6d6b0;
+                }
+                50% {
+                    border-color: #faa866;
+                }
+                75% {
+                    border-color: #f15b4c;
+                }
+                100% {
+                    border-color: #348c9b;
+                }
+            }
+            @keyframes move {
+                0% {
+                    transform: translate(0px, 0px) rotate(45deg);
+                    animation-timing-function: ease-in;
+                }
+                100% {
+                    transform: translate(0px, 25px) rotate(45deg);
+                }
+            }
+            @-webkit-keyframes move {
+                0% {
+                    transform: translate(0px, 0px) rotate(45deg);
+                    animation-timing-function: ease-in;
+                }
+                100% {
+                    transform: translate(0px, 25px) rotate(45deg);
+                }
+            }
+            @-moz-keyframes move {
+                0% {
+                    transform: translate(0px, 0px) rotate(45deg);
+                    animation-timing-function: ease-in;
+                }
+                100% {
+                    transform: translate(0px, 25px) rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #fp-nav {
+        display: block;
+    }
+    .fs50 {
+        font-size: 6.5104vh;
+    }
+    .fs32 {
+        font-size: 4.1666vh;
+    }
+    .fs30 {
+        font-size: 3.9062vh;
+    }
+    .fs24 {
+        font-size: 3.125vh;
+    }
+    .fs18 {
+        font-size: 2.3437vh;
+    }
+    .fs16 {
+        font-size: 2.0833vh;
+    }
+    .fs14 {
+        font-size: 1.5625vh;
+    }
+    .container {
+        // width: 70%;
+        .logo {
+            img {
+                height: 12vh;
+                width: auto;
+            }
+        }
+        .introBox {
+            margin: 4vh 0px;
+            border: 1px solid #faa866;
+        }
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
