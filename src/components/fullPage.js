@@ -47,8 +47,7 @@ class FullPage extends React.Component {
                                     </div>
                                     <div className="introButton center">
                                         <div
-                                            className="fs24 bold"
-                                            className="intro-bottom"
+                                            className="fs24 bold intro-bottom"
                                             onClick={() =>
                                                 fullpageApi.moveSectionDown()
                                             }
