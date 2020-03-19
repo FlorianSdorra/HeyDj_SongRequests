@@ -135,8 +135,8 @@ body {
 						text-align: center;
 					}
 				}
-				
-				.add-your-song{
+
+				.add-your-song {
 					text-align: center;
 					h1 {
 						font-family: "Oswald";
@@ -145,7 +145,7 @@ body {
 						letter-spacing: 0.05rem;
 						text-align: center;
 					}
-					.add-song-button{
+					.add-song-button {
 						background: dodgerblue;
 						border: none;
 						border-radius: 50px;
@@ -157,29 +157,41 @@ body {
 						text-align: center;
 						width: 150px;
 					}
+
+					.add-button-wishlist {
+						background: dodgerblue;
+						border: none;
+						border-radius: 50px;
+						color: $alabaster;
+						font-size: 1.3rem;
+						font-weight: bold;
+						height: 30px;
+						margin-top: 1.5rem;
+						text-align: center;
+						width: 40px;
+					}
 				}
 			}
 		}
 
-			footer {
-				align-items: center;
-				display: flex;
-				flex-direction: row;
-				font-size: 30px;
-				font-family: "Oswald";
-				flex-wrap: nowrap;
-				height: 10%;
-				justify-content: center;
-				width: 100%;
-				a:link,
-				a:visited {
-					color: $alabaster;
-					text-decoration: none;
-				}
+		footer {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			font-size: 30px;
+			font-family: "Oswald";
+			flex-wrap: nowrap;
+			height: 10%;
+			justify-content: center;
+			width: 100%;
+			a:link,
+			a:visited {
+				color: $alabaster;
+				text-decoration: none;
 			}
 		}
 	}
-
+}
 
 // MEDIA QUERIES
 

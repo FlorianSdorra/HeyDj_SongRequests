@@ -32,6 +32,8 @@ class App extends React.Component {
           <section className="add-your-song">
             <h1>Add your song to the request list.</h1>
             <button className="add-song-button">+</button>
+            <br></br>
+            <button className="add-button-wishlist">+</button>
           </section>
         </main>
         <footer>
