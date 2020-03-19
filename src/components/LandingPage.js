@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 
 class LandingPage extends React.Component {
     render() {
-        return (
-            
-        );
+        return;
     }
 }
 
