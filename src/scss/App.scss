@@ -2,7 +2,7 @@
     Created on : 2019-03
     Author     : Florian
 */
-// import styles of swantje and Florian
+// import styles of Swantje and Florian
 // @import "./App\ Flo.scss";
 // @import "./App\ Swantje.scss";
 
@@ -11,6 +11,7 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
 
 /* FONT STYLES */
+
 .center {
     text-align: center;
 }
@@ -60,7 +61,6 @@ $cosmic: #79365e;
 $deep-blush: #df7b9d;
 $sunset-orange: #ef4540;
 $casablanca: #f2ab42;
-$alabaster: #fcfdfd;
 $background-black: #222423;
 // End Colors
 
@@ -109,142 +109,310 @@ body {
     background-color: $pirate-black;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
 .del {
     display: none;
 }
+
+.schwarz {
+    background-color: $sunset-orange;
+}
+
 /* END General Styles */
+// Intro
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2.6041vh;
+    img {
+        height: 10vh;
+        width: auto;
+        // height: 12vh;
+        // width: auto;
+    }
+    .exit {
+        color: $sunset-orange;
+        font-size: 2.5em;
+    }
 
-.container {
-    width: 80%;
-    // width: 70%;
-    margin: 0 auto;
-    padding-top: 30px;
-    .logo {
-        img {
-            height: 10vh;
-            width: auto;
-            // height: 12vh;
-            // width: auto;
-        }
+    .settings {
+        font-size: 2.5em;
     }
-    .introBox {
-        margin: 2vh 0px;
-        // margin: 4vh 0px;
-        padding: 2vh;
-        // border: 1px solid #faa866;
-        p {
-            margin: 1vh 0;
-        }
+}
+
+.logo {
+    img {
+        height: 20vh;
+        width: auto;
+        // height: 12vh;
+        // width: auto;
     }
-    .introText {
-        padding: 0 20px;
-        h2 {
-            line-height: 125%;
-        }
+}
+
+.introBox {
+    margin-bottom: 2vh;
+    // margin: 4vh 0px;
+    // padding-bottom: 2vh;
+    // border: 1px solid #faa866;
+    p {
+        margin: 1vh 0;
     }
-    .introButton {
-        padding-top: 20px;
-        .arrow {
-            width: 50px;
-            height: 50px;
-            margin: 0px auto;
+}
+
+.introText {
+    padding: 0 20px;
+    h2 {
+        line-height: 125%;
+    }
+}
+
+.introButton {
+    // padding-top: 20px;
+    .arrow {
+        width: 50px;
+        height: 50px;
+        margin: 0px auto;
+        position: relative;
+        i {
             position: relative;
-            i {
-                position: relative;
-                left: 0;
-                top: 0;
-                border: solid #348c9b;
-                border-width: 0 4px 4px 0;
-                display: inline-block;
-                padding: 15px;
-            }
-            .down {
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                animation: blink 5s infinite, move 1s infinite;
-                -webkit-animation: blink 5s infinite, move 1s infinite;
-                -moz-animation: blink 5s infinite, move 1s infinite;
-            }
-
-            @keyframes blink {
-                0% {
-                    border-color: #348c9b;
-                }
-                25% {
-                    border-color: #a6d6b0;
-                }
-                50% {
-                    border-color: #faa866;
-                }
-                75% {
-                    border-color: #f15b4c;
-                }
-                100% {
-                    border-color: #348c9b;
-                }
-            }
-            @-webkit-keyframes blink {
-                0% {
-                    border-color: #348c9b;
-                }
-                25% {
-                    border-color: #a6d6b0;
-                }
-                50% {
-                    border-color: #faa866;
-                }
-                75% {
-                    border-color: #f15b4c;
-                }
-                100% {
-                    border-color: #348c9b;
-                }
-            }
-            @-moz-keyframes blink {
-                0% {
-                    border-color: #348c9b;
-                }
-                25% {
-                    border-color: #a6d6b0;
-                }
-                50% {
-                    border-color: #faa866;
-                }
-                75% {
-                    border-color: #f15b4c;
-                }
-                100% {
-                    border-color: #348c9b;
-                }
-            }
-            @keyframes move {
-                0% {
-                    transform: translate(0px, 0px) rotate(45deg);
-                    animation-timing-function: ease-in;
-                }
-                100% {
-                    transform: translate(0px, 25px) rotate(45deg);
-                }
-            }
-            @-webkit-keyframes move {
-                0% {
-                    transform: translate(0px, 0px) rotate(45deg);
-                    animation-timing-function: ease-in;
-                }
-                100% {
-                    transform: translate(0px, 25px) rotate(45deg);
-                }
-            }
-            @-moz-keyframes move {
-                0% {
-                    transform: translate(0px, 0px) rotate(45deg);
-                    animation-timing-function: ease-in;
-                }
-                100% {
-                    transform: translate(0px, 25px) rotate(45deg);
-                }
-            }
+            left: 0;
+            top: 0;
+            border: solid #348c9b;
+            border-width: 0 4px 4px 0;
+            display: inline-block;
+            padding: 15px;
         }
+    }
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    animation: blink 5s infinite, move 1s infinite;
+    -webkit-animation: blink 5s infinite, move 1s infinite;
+    -moz-animation: blink 5s infinite, move 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        border-color: #348c9b;
+    }
+    25% {
+        border-color: #a6d6b0;
+    }
+    50% {
+        border-color: #faa866;
+    }
+    75% {
+        border-color: #f15b4c;
+    }
+    100% {
+        border-color: #348c9b;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        border-color: #348c9b;
+    }
+    25% {
+        border-color: #a6d6b0;
+    }
+    50% {
+        border-color: #faa866;
+    }
+    75% {
+        border-color: #f15b4c;
+    }
+    100% {
+        border-color: #348c9b;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        border-color: #348c9b;
+    }
+    25% {
+        border-color: #a6d6b0;
+    }
+    50% {
+        border-color: #faa866;
+    }
+    75% {
+        border-color: #f15b4c;
+    }
+    100% {
+        border-color: #348c9b;
+    }
+}
+@keyframes move {
+    0% {
+        transform: translate(0px, 0px) rotate(45deg);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translate(0px, 25px) rotate(45deg);
+    }
+}
+@-webkit-keyframes move {
+    0% {
+        transform: translate(0px, 0px) rotate(45deg);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translate(0px, 25px) rotate(45deg);
+    }
+}
+@-moz-keyframes move {
+    0% {
+        transform: translate(0px, 0px) rotate(45deg);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translate(0px, 25px) rotate(45deg);
+    }
+}
+// END Intro
+
+// Sections
+// .custom-input {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     padding-top: 30px;
+//     min-width: 180px;
+//     width: 25.5vw;
+//     margin-bottom: 1.5625vw;
+//     input {
+//         padding: 15px 20px;
+//         border: none;
+//         color: #27245e;
+//         border-radius: 10px;
+//         width: 100%;
+//         box-sizing: border-box;
+//     }
+// }
+
+.logo-section-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logo-section-wrapper > h3 {
+    margin: 0;
+    padding-bottom: 15px;
+
+    // font-family: "Oswald";
+    font-weight: 200;
+    font-size: 1.1rem;
+    color: #fcfdfd;
+    letter-spacing: 1.2px;
+    // font-style: italic;
+}
+
+.search-form-input-border {
+    position: relative;
+    font-family: "FontAwesome";
+    border-radius: 4px;
+    border: 1px solid black;
+    box-shadow: 2px 1.5px #89a0d2;
+}
+
+.search-form-input {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    color: #89a0d2;
+    padding: 8px 12px;
+    border-style: none;
+    background-color: #222423e1;
+    width: 45vw;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: grey;
+}
+
+.search-form-input:focus {
+    outline: #89a0d2;
+}
+
+.section button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    background: none;
+    padding: 10px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 1vh;
+    // color: $alabaster;
+}
+
+.white {
+    border: 1px solid $alabaster;
+    color: $alabaster;
+}
+
+.white:hover {
+    background-color: $alabaster;
+    color: $pirate-black;
+}
+
+.red {
+    border: 1px solid $sunset-orange;
+    color: $sunset-orange;
+}
+
+.red:hover {
+    background-color: $sunset-orange;
+    color: $pirate-black;
+}
+
+.section .picture {
+    height: 40vh;
+    width: auto;
+}
+
+.section .bt-down {
+    border: solid $alabaster;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.section .arrow {
+    margin-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    a:link,
+    a:visited {
+        color: $alabaster;
+        text-decoration: none;
     }
 }
 
@@ -275,7 +443,6 @@ body {
         font-size: 1.5625vh;
     }
     .container {
-        // width: 70%;
         .logo {
             img {
                 height: 12vh;
@@ -283,9 +450,19 @@ body {
             }
         }
         .introBox {
-            margin: 4vh 0px;
+            margin-bottom: 4vh;
             border: 1px solid #faa866;
         }
+    }
+    .section .picture {
+        height: 40vh;
+    }
+
+    .search-form-input {
+        width: 30vw;
+    }
+    .logo-section-wrapper > h3 {
+        font-size: 1.3rem;
     }
 }
 
@@ -295,4 +472,7 @@ body {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    .container {
+        width: 70%;
+    }
 }

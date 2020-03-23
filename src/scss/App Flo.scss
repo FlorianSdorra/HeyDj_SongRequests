@@ -53,12 +53,12 @@ body {
 }
 
 .logo-section-wrapper {
-    width: 75%;
-    height: 55%;
-    border: 2px solid $deep-blush;
-    background-color: $pirate-black;
+    // width: 75%;
+    // height: 55%;
+    // border: 2px solid $deep-blush;
+    // background-color: $pirate-black;
 
-    border-radius: 5px;
+    // border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -126,7 +126,7 @@ body {
 
 @media (min-width: 768px) {
     .logo-section-wrapper {
-        width: 60%;
+        // width: 60%;
     }
     .logo-circle {
         width: 180px;

@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
+import heydjghost09 from "../assets/HeyDjGhost-04.png";
+import logo from "../assets/logo.png";
 // import LandingPage from "./LandingPage";
 
 class FullPage extends React.Component {
@@ -18,42 +20,71 @@ class FullPage extends React.Component {
                         <ReactFullpage.Wrapper>
                             <div className="section">
                                 <div className="container">
-                                    <header className="logo center">
-                                        <img />
+                                    <header className="links">
+                                        <img src={logo} />
+                                        <button className="fs16 red">
+                                            Login
+                                        </button>
+                                        {/* <i className="exit fas fa-times"></i> */}
+                                        {/* <i className="settings fas fa-cog"></i> */}
                                     </header>
-                                    <div className="introBox center">
-                                        <p className="fs32">RELEVEZ LE DÉFI!</p>
-                                        <h1 className="fs50">
-                                            DÉCOUVREZ NOS RÉSOLUTIONS 2018
-                                        </h1>
-                                        <p className="fs30">
-                                            pour une année plus&nbsp;sereine
-                                        </p>
+
+                                    <div className="center">
+                                        <img
+                                            className="picture"
+                                            id=""
+                                            src={heydjghost09}
+                                        ></img>
                                     </div>
-                                    <div className="introText center">
-                                        <h2 className="fs24">
-                                            Choisissez la résolution qui
-                                            <br className="del" />
-                                            &nbsp;vous interpelle le plus et
-                                            faites équipe avec nous!
-                                        </h2>
-                                        <p className="fs18">
-                                            Vous aurez droit à des mots
-                                            d’encouragement et des anecdotes
-                                            <br className="del" />
-                                            cocasses durant la
-                                            nouvelle&nbsp;année.
-                                        </p>
+                                    {/* <p className="fs24 reg center">
+                                        SUCHZEILESUCHZEILE
+                                    </p> */}
+                                    {/* <div className="custom-input fs24 reg">
+                                        <div>
+                                            <form>
+                                                <label>
+                                                    <input
+                                                        className="center"
+                                                        type="text"
+                                                        placeholder="Event, DJ, Date ..."
+                                                        name="First_Name"
+                                                    />
+                                                </label>
+                                            </form>
+                                        </div>
+                                    </div> */}
+                                    <div className="logo-section-wrapper fs24 reg">
+                                        <h3>Wish you could hear</h3>
+                                        <div className="search-form">
+                                            <form>
+                                                <label>
+                                                    <div className="search-form-input-border">
+                                                        <i className="fas fa-search search-icon"></i>
+                                                        <input
+                                                            className="center search-form-input"
+                                                            placeholder="Event, DJ, Date ..."
+                                                            type="text"
+                                                        ></input>
+                                                    </div>
+                                                </label>
+                                            </form>
+                                        </div>
                                     </div>
+                                    <div className="center fs24 reg">
+                                        <button className="white">
+                                            SEARCH!
+                                        </button>
+                                    </div>
+
                                     <div className="introButton center">
-                                        <div
+                                        {/* <div
                                             className="fs24 bold intro-bottom"
                                             onClick={() =>
                                                 fullpageApi.moveSectionDown()
                                             }
                                         >
-                                            DÉCOUVREZ
-                                        </div>
+                                            ABOUT
+                                        </div> */}
                                         <div
                                             className="arrow"
                                             onClick={() =>
@@ -65,64 +96,75 @@ class FullPage extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="section">
-                                <p className="center">Section 2</p>
-                                <div className="center">
-                                    <button
-                                        onClick={() =>
-                                            fullpageApi.moveSectionDown()
-                                        }
-                                    >
-                                        About
-                                    </button>
-                                    <div
-                                        className="arrow"
-                                        onClick={() =>
-                                            fullpageApi.moveSectionDown()
-                                        }
-                                    >
-                                        <i className="bt-down"></i>
+                            <div className="section schwarz">
+                                <div className="container">
+                                    <div className="logo center">
+                                        <img src={logo} />
+                                    </div>
+                                    <div className="introBox center">
+                                        <p className="fs32">
+                                            Request your favorite&nbsp;tune!
+                                        </p>
+                                        <h1 className="fs50">
+                                            DISCOVER OUR HEY DJ SONG WISHLISTS
+                                        </h1>
+                                        <p className="fs30">
+                                            Get in touch with your&nbsp;DJ.
+                                        </p>
+                                    </div>
+                                    <div className="introText center">
+                                        <h2 className="fs24">
+                                            This Page takes the
+                                            song&nbsp;request
+                                            <br className="del" /> to the
+                                            digital level!
+                                        </h2>
+                                        <p className="fs18">
+                                            Be in full control of your event and
+                                            the soundtrack of the night.
+                                            <br className="del" />
+                                            Also for DJs the
+                                            go&nbsp;to&nbsp;solution to keep
+                                            track.
+                                        </p>
+                                    </div>
+
+                                    <div className="center">
+                                        <button
+                                            className="fs16 white"
+                                            onClick={() =>
+                                                fullpageApi.moveSectionDown()
+                                            }
+                                        >
+                                            Read more?
+                                        </button>
+                                        <div
+                                            className="arrow"
+                                            onClick={() =>
+                                                fullpageApi.moveSectionDown()
+                                            }
+                                        >
+                                            <i className="bt-down"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="section">
-                                <p>Section 3</p>
-                                <div className="center">
-                                    <button
-                                        onClick={() =>
-                                            fullpageApi.moveSectionDown()
-                                        }
-                                    >
-                                        About
-                                    </button>
-                                    <div
-                                        className="arrow"
-                                        onClick={() =>
-                                            fullpageApi.moveSectionDown()
-                                        }
-                                    >
-                                        <i className="bt-down"></i>
+                                <div className="container">
+                                    <p className="center">Section 3</p>
+                                    <div className="center">
+                                        <button
+                                            className="fs16 white"
+                                            onClick={() =>
+                                                fullpageApi.moveSectionDown()
+                                            }
+                                        >
+                                            GET STARTED NOW!
+                                        </button>
                                     </div>
-                                </div>
-                            </div>
-                            <div className="section">
-                                <p>Section 4</p>
-                                <div className="center">
-                                    <button
-                                        onClick={() =>
-                                            fullpageApi.moveSectionDown()
-                                        }
-                                    >
-                                        About
-                                    </button>
-                                    <div
-                                        className="arrow"
-                                        onClick={() =>
-                                            fullpageApi.moveSectionDown()
-                                        }
-                                    >
-                                        <i className="bt-down"></i>
-                                    </div>
+                                    <footer className="fs16 center">
+                                        <a href="#">Contact &amp; Imprint</a>
+                                    </footer>
                                 </div>
                             </div>
                         </ReactFullpage.Wrapper>
