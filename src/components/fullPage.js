@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
 import heydjghost09 from "../assets/HeyDjGhost-04.png";
+import heydjghost17 from "../assets/HeyDjGhost-17.png";
+
 import logo from "../assets/logo.png";
 // import LandingPage from "./LandingPage";
 
@@ -54,7 +56,9 @@ class FullPage extends React.Component {
                                         </div>
                                     </div> */}
                                     <div className="logo-section-wrapper fs24 reg">
-                                        <h3>Wish you could hear</h3>
+                                        {/* <h3 className="fs24">
+                                            Wish you could hear
+                                        </h3> */}
                                         <div className="search-form">
                                             <form>
                                                 <label>
@@ -70,9 +74,9 @@ class FullPage extends React.Component {
                                             </form>
                                         </div>
                                     </div>
-                                    <div className="center fs24 reg">
+                                    <div className="center fs16 reg">
                                         <button className="white">
-                                            SEARCH!
+                                            Search
                                         </button>
                                     </div>
 
@@ -96,7 +100,7 @@ class FullPage extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="section schwarz">
+                            <div className="section bgSunset-orange">
                                 <div className="container">
                                     <div className="logo center">
                                         <img src={logo} />
@@ -123,7 +127,7 @@ class FullPage extends React.Component {
                                             Be in full control of your event and
                                             the soundtrack of the night.
                                             <br className="del" />
-                                            Also for DJs the
+                                            &nbsp;Also for DJs the
                                             go&nbsp;to&nbsp;solution to keep
                                             track.
                                         </p>
@@ -151,7 +155,30 @@ class FullPage extends React.Component {
                             </div>
                             <div className="section">
                                 <div className="container">
-                                    <p className="center">Section 3</p>
+                                    <div className="center">
+                                        <img
+                                            className="picture"
+                                            id=""
+                                            src={heydjghost17}
+                                        ></img>
+                                    </div>
+
+                                    <p className="fs24 reg center">
+                                        HEY DJ :
+                                        <strong>
+                                            &nbsp;Search, add and manage
+                                            your&nbsp;event
+                                        </strong>
+                                        !
+                                    </p>
+                                    <p className="fs18 reg center light">
+                                        What are you waiting for? This is the
+                                        perfect way to request&nbsp;incognito.
+                                        <br className="del" />
+                                        &nbsp;Sign up to <i>handle</i> the
+                                        incoming wishes?
+                                    </p>
+
                                     <div className="center">
                                         <button
                                             className="fs16 white"
@@ -159,7 +186,7 @@ class FullPage extends React.Component {
                                                 fullpageApi.moveSectionDown()
                                             }
                                         >
-                                            GET STARTED NOW!
+                                            Get started!
                                         </button>
                                     </div>
                                     <footer className="fs16 center">
