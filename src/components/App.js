@@ -2,7 +2,7 @@ import React from "react";
 import "normalize.css"; // This adds the normalize.css !
 import "../scss/App.scss";
 
-import FullPage from "./fullPage";
+import FullPage from "./LandingPage";
 // import ReactFullpage from "@fullpage/react-fullpage";
 import { connect } from "react-redux";
 
