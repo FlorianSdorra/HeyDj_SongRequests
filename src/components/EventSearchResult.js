@@ -1,8 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
-import heydjghost09 from "../assets/HeyDjGhost-04.png";
-import heydjghost17 from "../assets/HeyDjGhost-17.png";
 
 import logo from "../assets/logo.png";
 // import LandingPage from "./LandingPage";
