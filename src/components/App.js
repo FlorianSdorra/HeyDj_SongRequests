@@ -2,7 +2,9 @@ import React from "react";
 import "normalize.css"; // This adds the normalize.css !
 import "../scss/App.scss";
 
-import EventSearchResult from "./EventSearchResult";
+import FullPage from "./LandingPage";
+// import EventSearchResult from "./EventSearchResult";
+import EventOverview from "./Event";
 // import ReactFullpage from "@fullpage/react-fullpage";
 import { connect } from "react-redux";
 
@@ -10,7 +12,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <EventSearchResult />
+                {/* <FullPage /> */}
+                {/* <EventSearchResult /> */}
+                <EventOverview />
             </div>
         );
     }

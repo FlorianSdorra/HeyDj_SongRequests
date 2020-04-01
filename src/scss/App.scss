@@ -115,6 +115,11 @@ body {
     padding-top: 30px;
 }
 
+.container-list {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .del {
     display: none;
 }
@@ -376,12 +381,59 @@ header {
 .section button {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    background: none;
     padding: 10px 40px;
     border-radius: 99px;
     cursor: pointer;
     margin-top: 1vh;
-    // color: $alabaster;
+}
+
+.white {
+    border: 1px solid $alabaster;
+    background: none;
+    color: $alabaster;
+}
+
+.white:hover {
+    background-color: $alabaster;
+    color: $pirate-black;
+}
+
+.green {
+    background-color: $aqua-forest;
+    border: 1px solid $aqua-forest;
+    color: $pirate-black;
+    margin: 1vh 0;
+}
+
+button.green:hover {
+    background: none;
+    color: $aqua-forest;
+}
+
+.small {
+    margin-left: auto;
+}
+
+.red {
+    border: 1px solid $sunset-orange;
+    color: $sunset-orange;
+    background: none;
+}
+
+.red:hover {
+    background-color: $sunset-orange;
+    color: $pirate-black;
+}
+
+.black {
+    background-color: $alabaster;
+    border: 1px solid $alabaster;
+    color: $background-black;
+}
+
+.black:hover {
+    border: 1px solid $sunset-orange;
+    color: $sunset-orange;
 }
 
 //bad puzzling needs to be reworked
@@ -434,6 +486,11 @@ header {
     box-sizing: border-box;
 
     margin: 5px 0;
+    &:hover {
+        border: 2px solid $background-black;
+        border-left-width: 0;
+        border-top-width: 0;
+    }
 }
 
 .result-image {
@@ -519,38 +576,122 @@ header {
 // /* Large devices (large desktops, 1200px and up) */
 // @media (min-width: 1200px) {
 // }
-
-.white {
-    border: 1px solid $alabaster;
-    color: $alabaster;
+// request list
+.request-list-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.white:hover {
-    background-color: $alabaster;
-    color: $pirate-black;
+.request-list-item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    border: 2px solid $alabaster;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 99px;
+    border-bottom-right-radius: 99px;
+    border-bottom-left-radius: 5px;
+
+    padding-top: 8px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+
+    background: $pirate-black;
+
+    box-sizing: border-box;
+
+    margin: 5px 0;
+    &:hover {
+        border: 2px solid $sunset-orange;
+        border-left-width: 0;
+        border-bottom-width: 0;
+        .request-heart-container {
+            .heart {
+                animation: pulse 1s ease infinite;
+
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                    }
+                    50% {
+                        transform: scale(1.3);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
 }
 
-.red {
-    border: 1px solid $sunset-orange;
-    color: $sunset-orange;
+.request-image {
+    width: 60px;
+    height: 60px;
+
+    background-size: contain;
 }
 
-.red:hover {
-    background-color: $sunset-orange;
-    color: $pirate-black;
+.request-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    // text-align: right;
+    padding-left: 15px;
+    // padding-right: 15px;
 }
 
-.black {
-    background-color: $alabaster !important;
-    border: 1px solid $alabaster;
-    color: $background-black;
+.request-info-container > p {
+    font-size: 1rem;
+    letter-spacing: 0.1px;
 }
 
-.black:hover {
-    border: 1px solid $sunset-orange;
-    color: $sunset-orange;
+.request-info-container > * {
+    margin: 0;
 }
 
+.request-heart-container {
+    display: flex;
+    margin-left: auto;
+}
+
+.heart {
+    flex: 1 1 20%;
+    fill: $sunset-orange;
+    top: 2.5px;
+    width: 25px;
+}
+
+.request-list-01 {
+    background-image: url("../assets/requestlist-01.jpeg");
+}
+
+.request-list-02 {
+    background-image: url("../assets/requestlist-02.jpeg");
+}
+
+.request-list-03 {
+    background-image: url("../assets/requestlist-03.jpeg");
+}
+
+.request-list-04 {
+    background-image: url("../assets/requestlist-04.jpeg");
+}
+
+.request-list-05 {
+    background-image: url("../assets/requestlist-05.jpeg");
+}
+
+// End request list
 .section .picture {
     height: 35vh;
     width: auto;
@@ -559,6 +700,16 @@ header {
 .section .bt-down {
     border: solid $alabaster;
     border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.section .bt-up {
+    border: solid $alabaster;
+    border-width: 2px 0 0 2px;
     display: inline-block;
     padding: 10px;
     transform: rotate(45deg);
@@ -618,6 +769,11 @@ footer {
         }
         .introBox {
             margin-bottom: 4vh;
+            // border: 1px solid #faa866;
+            border: 1px solid $casablanca;
+        }
+        .eventBox {
+            margin-bottom: 0 4vh;
             // border: 1px solid #faa866;
             border: 1px solid $casablanca;
         }
