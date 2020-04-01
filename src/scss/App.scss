@@ -615,7 +615,13 @@ button.green:hover {
         border-left-width: 0;
         border-bottom-width: 0;
         .request-heart-container {
+            display: flex;
+            margin-left: auto;
             .heart {
+                flex: 1 1 20%;
+                fill: $sunset-orange;
+                top: 2.5px;
+                width: 25px;
                 animation: pulse 1s ease infinite;
 
                 @keyframes pulse {
@@ -660,15 +666,7 @@ button.green:hover {
 }
 
 .request-heart-container {
-    display: flex;
-    margin-left: auto;
-}
-
-.heart {
-    flex: 1 1 20%;
-    fill: $sunset-orange;
-    top: 2.5px;
-    width: 25px;
+    display: none;
 }
 
 .request-list-01 {
@@ -689,6 +687,18 @@ button.green:hover {
 
 .request-list-05 {
     background-image: url("../assets/requestlist-05.jpeg");
+}
+
+.track-search-01 {
+    background-image: url("../assets/tracksearch-01.jpeg");
+}
+
+.track-search-02 {
+    background-image: url("../assets/tracksearch-02.jpeg");
+}
+
+.track-search-03 {
+    background-image: url("../assets/tracksearch-03.jpeg");
 }
 
 // End request list

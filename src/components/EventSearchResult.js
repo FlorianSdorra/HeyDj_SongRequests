@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
-// import LandingPage from "./LandingPage";
 
 class EventSearchResult extends React.Component {
     render() {
