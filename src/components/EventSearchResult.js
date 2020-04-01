@@ -25,8 +25,11 @@ class EventSearchResult extends React.Component {
                                         {/* <button className="fs16 red">
                                             Login
                                         </button> */}
+                                        <button className="fs16 red">
+                                            Logout
+                                        </button>
                                         {/* <i className="exit fas fa-times"></i> */}
-                                        <i className="settings fas fa-cog"></i>
+                                        {/* <i className="settings fas fa-cog"></i> */}
                                     </header>
 
                                     <div className="logo-section-wrapper fs24 reg">
