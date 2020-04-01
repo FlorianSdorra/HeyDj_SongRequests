@@ -38,6 +38,7 @@ class EventSearchResult extends React.Component {
                                                             className="center search-form-input"
                                                             placeholder="Event, DJ, Date ..."
                                                             type="text"
+                                                            defaultValue="Berlin King Kong Kicks"
                                                         ></input>
                                                     </div>
                                                 </label>
@@ -57,7 +58,6 @@ class EventSearchResult extends React.Component {
                                             <div className="result-info-container">
                                                 <p>23/04/20</p>
                                                 <p>Fvck Genres</p>
-
                                                 <hr />
                                                 <p>Musik&#38;Frieden</p>
                                             </div>
@@ -114,19 +114,19 @@ class EventSearchResult extends React.Component {
                                     <div className="result-list-wrap">
                                         <div className="result-list-item">
                                             <div className="result-image-container">
-                                                <div className="result-image event-03"></div>
+                                                <div className="result-image ghost"></div>
                                             </div>
                                             <div className="result-info-container">
-                                                <p>23/04/20</p>
-                                                <p>Fvck Genres</p>
+                                                <p>00/00/00</p>
+                                                <p>This is a result</p>
                                                 <hr />
-                                                <p>Musik&#38;Frieden</p>
+                                                <p>Some info</p>
                                             </div>
                                         </div>
 
                                         <div className="result-list-item">
                                             <div className="result-image-container">
-                                                <div className="result-image event-02"></div>
+                                                <div className="result-image ghost"></div>
                                             </div>
                                             <div className="result-info-container">
                                                 <p>24/04/20</p>
@@ -138,25 +138,25 @@ class EventSearchResult extends React.Component {
 
                                         <div className="result-list-item">
                                             <div className="result-image-container">
-                                                <div className="result-image event-01"></div>
+                                                <div className="result-image ghost"></div>
                                             </div>
                                             <div className="result-info-container">
-                                                <p>01/05/20</p>
-                                                <p>The early days</p>
+                                                <p>00/00/00</p>
+                                                <p>This is a result</p>
                                                 <hr />
-                                                <p>Lido Berlin</p>
+                                                <p>Some info</p>
                                             </div>
                                         </div>
 
                                         <div className="result-list-item">
                                             <div className="result-image-container">
-                                                <div className="result-image event-01"></div>
+                                                <div className="result-image ghost"></div>
                                             </div>
                                             <div className="result-info-container">
-                                                <p>01/05/20</p>
-                                                <p>The early days</p>
+                                                <p>00/00/00</p>
+                                                <p>This is a result</p>
                                                 <hr />
-                                                <p>Lido Berlin</p>
+                                                <p>Some info</p>
                                             </div>
                                         </div>
                                     </div>
