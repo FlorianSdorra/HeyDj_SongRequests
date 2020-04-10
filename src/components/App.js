@@ -20,7 +20,7 @@ class App extends React.Component {
                         <Route exact path="/" component={LandingPage} /> 
                         <Route path="/eventsearch" component={EventSearchResult} />
                         <Route path="/eventoverview" component={EventOverview} /> 
-                        <Route path="tracksearch" component={TrackSearch} />
+                        <Route path="/tracksearch" component={TrackSearch} />
                     </div>
                 </Switch>
             </Router>
