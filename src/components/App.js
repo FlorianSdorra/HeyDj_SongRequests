@@ -6,6 +6,7 @@ import FullPage from "./LandingPage";
 import EventSearchResult from "./EventSearchResult";
 import EventOverview from "./Event";
 import TrackSearch from "./TrackSearch";
+import LoginSignUp from "./LoginSignUp";
 
 import { connect } from "react-redux";
 
@@ -16,13 +17,14 @@ class App extends React.Component {
                 {/* <FullPage /> */}
                 {/* <EventSearchResult /> */}
                 {/* <EventOverview /> */}
-                <TrackSearch />
+                {/* <TrackSearch /> */}
+                <LoginSignUp />
             </div>
         );
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return state;
 };
 

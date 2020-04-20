@@ -23,7 +23,7 @@ class FullPage extends React.Component {
                             <div className="section">
                                 <div className="container">
                                     <header className="links">
-                                        <img src={logo} />
+                                        <img src={logo} alt="" />
                                         <button className="fs16 red">
                                             Login
                                         </button>
@@ -39,6 +39,7 @@ class FullPage extends React.Component {
                                             className="picture"
                                             id=""
                                             src={heydjghost09}
+                                            alt=""
                                         ></img>
                                     </div>
                                     {/* <p className="fs24 reg center">
@@ -106,7 +107,7 @@ class FullPage extends React.Component {
                             <div className="section bgSunset-orange">
                                 <div className="container">
                                     <div className="logo center">
-                                        <img src={logo} />
+                                        <img src={logo} alt="" />
                                     </div>
                                     <div className="introBox center">
                                         <p className="fs32">
@@ -163,6 +164,7 @@ class FullPage extends React.Component {
                                             className="picture"
                                             id=""
                                             src={heydjghost17}
+                                            alt=""
                                         ></img>
                                     </div>
 
@@ -205,7 +207,7 @@ class FullPage extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return state;
 };
 

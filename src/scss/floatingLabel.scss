@@ -1,0 +1,46 @@
+form {
+    width: 100%;
+    margin: 50px 0;
+    .row {
+        margin-bottom: 50px;
+        position: relative;
+        label {
+            position: absolute;
+            top: 0;
+            transition: all 200ms;
+            opacity: 0.5;
+        }
+        input:focus ~ label,
+        input:valid ~ label {
+            font-size: 75%;
+            transform: translate3d(0, -100%, 0);
+            opacity: 1;
+        }
+        input {
+            width: 100%;
+            color: white;
+            border: none;
+            background-color: transparent;
+            padding: 10px 0;
+            border-bottom: 1px solid white;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    input[type="submit"] {
+        background-color: blue;
+        border: 0;
+        color: white;
+        padding: 10px 25px;
+        border-radius: 40px;
+    }
+}
+
+.flex-revcol-left {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: left;
+    align-items: flex-start;
+}

@@ -20,7 +20,7 @@ class TrackSearch extends React.Component {
                             <div className="section">
                                 <div className="container ">
                                     <header className="links">
-                                        <img src={logo} />
+                                        <img src={logo} alt="Hey Dj logo" />
                                         {/* <button className="fs16 red">
                                             Login
                                         </button> */}
@@ -277,7 +277,7 @@ class TrackSearch extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return state;
 };
 

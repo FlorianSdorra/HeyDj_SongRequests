@@ -21,7 +21,7 @@ class EventOverview extends React.Component {
                             <div className="section">
                                 <div className="container">
                                     <header className="links">
-                                        <img src={logo} />
+                                        <img src={logo} alt="Hey Dj Logo" />
                                         {/* <button className="fs16 red">
                                             Login
                                         </button> */}
@@ -37,6 +37,7 @@ class EventOverview extends React.Component {
                                             className="picture"
                                             id=""
                                             src={eventPic}
+                                            alt=""
                                         ></img>
                                     </div>
                                     <div className="center fs16 reg">
@@ -367,7 +368,7 @@ class EventOverview extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return state;
 };
 
