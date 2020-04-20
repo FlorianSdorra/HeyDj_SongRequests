@@ -48,7 +48,7 @@ class LoginSignUp extends React.Component {
                                                 <div className="row flex-revcol-left">
                                                     <input
                                                         name="password"
-                                                        type="text"
+                                                        type="password"
                                                         id="password"
                                                         required
                                                     />
@@ -120,7 +120,7 @@ class LoginSignUp extends React.Component {
                                                 <div className="row flex-revcol-left">
                                                     <input
                                                         name="password"
-                                                        type="text"
+                                                        type="password"
                                                         id="password"
                                                         required
                                                     />
@@ -131,7 +131,7 @@ class LoginSignUp extends React.Component {
                                                 <div className="row flex-revcol-left">
                                                     <input
                                                         name="password"
-                                                        type="text"
+                                                        type="password"
                                                         id="password"
                                                         required
                                                     />
@@ -141,7 +141,7 @@ class LoginSignUp extends React.Component {
                                                 </div>
                                                 <input
                                                     type="submit"
-                                                    value="Login"
+                                                    value="Signup"
                                                 />
                                             </form>
                                         </div>
