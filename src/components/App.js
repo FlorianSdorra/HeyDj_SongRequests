@@ -28,6 +28,7 @@ class App extends React.Component {
                             component={EventOverview}
                         />
                         <Route path="/tracksearch" component={TrackSearch} />
+                        <Route path="/login" component={LoginSignUp} />
                     </div>
                 </Switch>
             </Router>
