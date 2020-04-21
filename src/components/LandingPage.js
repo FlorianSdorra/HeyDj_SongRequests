@@ -1,5 +1,9 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import { DO_SOMETHING_OVER } from "../constants/action-types";
+import heyDjHandlerComponent from "../components/heyDjHandlerComponent";
+
 import ReactFullpage from "@fullpage/react-fullpage";
 import heydjghost09 from "../assets/HeyDjGhost-04.png";
 import heydjghost17 from "../assets/HeyDjGhost-17.png";
@@ -7,9 +11,11 @@ import heydjghost17 from "../assets/HeyDjGhost-17.png";
 import logo from "../assets/logo.png";
 // import LandingPage from "./LandingPage";
 
-class FullPage extends React.Component {
-    render() {
-        return (
+const LandingPage = ({ appState, handleHeyDjAction})=>{
+    
+        return appState === DO_SOMETHING_OVER ? (
+            <Redirect to="/eventoverview"/>
+        ) : (
             <ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
@@ -79,7 +85,7 @@ class FullPage extends React.Component {
                                         </div>
                                     </div>
                                     <div className="center fs16 reg">
-                                        <button className="white">
+                                        <button onClick={handleHeyDjAction} className="white">
                                             Search
                                         </button>
                                     </div>
@@ -205,10 +211,10 @@ class FullPage extends React.Component {
             />
         );
     }
-}
+
 
 const mapStateToProps = (state) => {
     return state;
 };
 
-export default connect(mapStateToProps, {})(FullPage);
+export default connect(mapStateToProps, {})(heyDjHandlerComponent(LandingPage));
