@@ -6,7 +6,7 @@ import "../scss/App.scss";
 
 import LandingPage from "./LandingPage";
 import EventSearchResult from "./EventSearchResult";
-import EventOverview from "./Event";
+import EventOverview from "./EventOverview";
 import TrackSearch from "./TrackSearch";
 
 import { connect } from "react-redux";
