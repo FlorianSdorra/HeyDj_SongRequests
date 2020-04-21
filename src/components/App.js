@@ -8,6 +8,7 @@ import LandingPage from "./LandingPage";
 import EventSearchResult from "./EventSearchResult";
 import EventOverview from "./EventOverview";
 import TrackSearch from "./TrackSearch";
+import LoginSignUp from "./LoginSignUp";
 
 import { connect } from "react-redux";
 
@@ -17,10 +18,17 @@ class App extends React.Component {
             <Router>
                 <Switch>
                     <div className="App">
-                        <Route exact path="/" component={LandingPage} /> 
-                        <Route path="/eventsearch" component={EventSearchResult} />
-                        <Route path="/eventoverview" component={EventOverview} /> 
+                        <Route exact path="/" component={LandingPage} />
+                        <Route
+                            path="/eventsearch"
+                            component={EventSearchResult}
+                        />
+                        <Route
+                            path="/eventoverview"
+                            component={EventOverview}
+                        />
                         <Route path="/tracksearch" component={TrackSearch} />
+                        <Route path="/login" component={LoginSignUp} />
                     </div>
                 </Switch>
             </Router>
@@ -28,7 +36,7 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return state;
 };
 
