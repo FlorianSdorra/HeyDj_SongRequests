@@ -1,9 +1,8 @@
-// HANDLE actions
+function setDirection (direction){
+    return {
+        type: "SET_DIRECTION",
+        direction: direction
+    }
+}
 
-import {
-    DO_SOMETHING_OVER
-} from "../constants/action-types"
-
-export const doSomethingOver = () => ({
-    type: DO_SOMETHING_OVER
-});
+export default setDirection;

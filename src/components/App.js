@@ -12,13 +12,19 @@ import LoginSignUp from "./LoginSignUp";
 
 import { connect } from "react-redux";
 
+
 class App extends React.Component {
     render() {
+        // console.log(this.props)
         return (
+            
             <Router>
                 <Switch>
                     <div className="App">
-                        <Route exact path="/" component={LandingPage} />
+                        <Route 
+                            exact path="/" 
+                            component={LandingPage} 
+                        />
                         <Route
                             path="/eventsearch"
                             component={EventSearchResult}
@@ -27,8 +33,14 @@ class App extends React.Component {
                             path="/eventoverview"
                             component={EventOverview}
                         />
-                        <Route path="/tracksearch" component={TrackSearch} />
-                        <Route path="/login" component={LoginSignUp} />
+                        <Route 
+                            path="/tracksearch" 
+                            component={TrackSearch} 
+                        />
+                        <Route 
+                            path="/login" 
+                            component={LoginSignUp} 
+                        />
                     </div>
                 </Switch>
             </Router>

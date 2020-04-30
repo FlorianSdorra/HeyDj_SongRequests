@@ -6,6 +6,7 @@ import logo from "../assets/logo.png";
 
 class EventSearchResult extends React.Component {
     render() {
+        console.log(this.props)
         return (
             <ReactFullpage
                 //full page options

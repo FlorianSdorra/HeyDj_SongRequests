@@ -7,6 +7,7 @@ import eventPic from "../assets/eventPic-01.png";
 
 class EventOverview extends React.Component {
     render() {
+        console.log(this.props)
         return (
             <ReactFullpage
                 //full page options
