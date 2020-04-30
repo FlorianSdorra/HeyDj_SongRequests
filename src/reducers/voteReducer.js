@@ -11,4 +11,6 @@ const voteReducer = (state, action) => {
     return state;
 }}
 
+
+
 export default voteReducer;

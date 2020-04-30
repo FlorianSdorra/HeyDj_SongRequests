@@ -1,5 +1,5 @@
 import React from "react";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 
@@ -10,10 +10,17 @@ import heydjghost17 from "../assets/HeyDjGhost-17.png";
 import logo from "../assets/logo.png";
 
 import setDirection from '../actions/index'
+import store from "../store/store";
 
-const LandingPage = ()=>{
-        
-        return (
+
+const LandingPage = (props)=>{
+    const direction = props.direction
+    
+   return direction === "login" ? (
+       <Redirect push to="/login"/>
+   ) : direction === "eventsearch" ? (
+       <Redirect push to="/eventoverview"/>
+   ) : (
             <ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
@@ -22,13 +29,14 @@ const LandingPage = ()=>{
                 navigation
                 navigationPosition={"left"} /* Options here */
                 render={({ state, fullpageApi }) => {
-                    return (
+                    return  (
+                        
                         <ReactFullpage.Wrapper>
                             <div className="section">
                                 <div className="container">
                                     <header className="links">
                                         <img src={logo} alt="" />
-                                        <button className="fs16 red">
+                                        <button className="fs16 red" onClick={dispatchBtnAction} value="login">
                                             Login
                                         </button>
                                         {/* <button className="fs16 red">
@@ -83,7 +91,7 @@ const LandingPage = ()=>{
                                         </div>
                                     </div>
                                     <div className="center fs16 reg">
-                                        <button  className="white"> 
+                                        <button onClick={dispatchBtnAction} value="eventsearch" className="white"> 
                                             Search
                                         </button>
                                     </div>
@@ -208,12 +216,19 @@ const LandingPage = ()=>{
                 }}
             />
         );
-    }
+   }
+
 
 
 const mapStateToProps = (state) => {
     return state
 };
+
+function dispatchBtnAction(e) {
+    const direction = e.target.value;
+    store.dispatch(setDirection(direction))
+    console.log(store)
+}
 
 
 export default connect(mapStateToProps, {})(LandingPage);
