@@ -1,11 +1,12 @@
 import React from "react";
+import {Redirect} from 'react-router-dom'
 import { connect } from "react-redux";
 
 import ReactFullpage from "@fullpage/react-fullpage";
 import logo from "../assets/logo.png";
 import eventPic from "../assets/eventPic-01.png";
 
-import {resetDirection} from '../actions';
+import {resetDirection, setDirection} from '../actions';
 
 class EventOverview extends React.Component {
 
@@ -16,9 +17,18 @@ class EventOverview extends React.Component {
 
     render() {
         console.log(this.props)
-        return (
-            
-            <ReactFullpage
+
+        const handleDirection = (e) =>{
+            const direction = e.target.value;
+            console.log(e.target);
+            this.props.changeDirection(direction)
+        }
+
+        const direction = this.props.direction;
+
+        return direction === "tracksearch" ? (
+            <Redirect push to="/tracksearch"/>) :  
+            (<ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
                 scrollingSpeed={1000}
@@ -51,7 +61,7 @@ class EventOverview extends React.Component {
                                         ></img>
                                     </div>
                                     <div className="center fs16 reg">
-                                        <button className="green">
+                                        <button onClick={handleDirection} value="tracksearch" className="green">
                                             Add song&nbsp;request
                                         </button>
                                     </div>
@@ -384,7 +394,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        resetDirection: () => {dispatch(resetDirection())}
+        resetDirection: () => {dispatch(resetDirection())},
+        changeDirection: (direction) => {dispatch(setDirection(direction))}
     }
 }
 

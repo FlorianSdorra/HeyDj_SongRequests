@@ -24,7 +24,10 @@ class EventSearchResult extends React.Component {
         const direction = this.props.direction;
 
         return direction === "eventoverview" ? (
-            <Redirect push to="/eventoverview"/>):
+            <Redirect push to="/eventoverview"/>) : 
+            direction === "logout"? (
+            <Redirect push to="/"/>
+            ):
             (<ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
