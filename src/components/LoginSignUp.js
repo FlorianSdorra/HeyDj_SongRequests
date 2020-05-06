@@ -7,6 +7,7 @@ import logo from "../assets/logo.png";
 class LoginSignUp extends React.Component {
     render() {
         return (
+            console.log(this.props.direction),
             <ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}

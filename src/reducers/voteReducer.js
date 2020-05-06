@@ -6,7 +6,11 @@ const voteReducer = (state, action) => {
                 ...state,
                 direction: action.direction
             }
-    
+        case "RESET_DIRECTION":
+            return{
+                ...state,
+                direction:""
+            }
     default:
     return state;
 }}
