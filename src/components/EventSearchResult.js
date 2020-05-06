@@ -1,14 +1,31 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
 
+import {setDirection,resetDirection} from '../actions';
+
 class EventSearchResult extends React.Component {
+    componentDidMount(){
+        return this.props.resetDirection();
+    };
+
     render() {
         console.log(this.props)
-        return (
-            <ReactFullpage
+
+        const handleDirection = (e) =>{
+            // const direction = e.target.value;
+            // console.log(e.target);
+            this.props.changeDirection("eventoverview")
+        }
+
+        const direction = this.props.direction;
+
+        return direction === "eventoverview" ? (
+            <Redirect push to="/eventoverview"/>):
+            (<ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
                 scrollingSpeed={1000}
@@ -58,7 +75,7 @@ class EventSearchResult extends React.Component {
                                             <div className="result-image-container">
                                                 <div className="result-image event-03"></div>
                                             </div>
-                                            <div className="result-info-container">
+                                            <div onClick={handleDirection} value="eventoverview" className="result-info-container">
                                                 <p>23/04/20</p>
                                                 <p>Fvck Genres</p>
                                                 <hr />
@@ -191,4 +208,11 @@ const mapStateToProps = (state) => {
     return state;
 };
 
-export default connect(mapStateToProps, {})(EventSearchResult);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        resetDirection: () => {dispatch(resetDirection())},
+        changeDirection: (direction) => {dispatch(setDirection(direction))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventSearchResult);

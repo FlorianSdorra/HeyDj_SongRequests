@@ -4,7 +4,14 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
 
+import {setDirection, resetDirection} from '../actions';
+
 class LoginSignUp extends React.Component {
+    
+    componentDidMount(){
+        return this.props.resetDirection();
+    };
+
     render() {
         return (
             console.log(this.props.direction),
@@ -163,4 +170,10 @@ const mapStateToProps = (state) => {
     return state;
 };
 
-export default connect(mapStateToProps, {})(LoginSignUp);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        resetDirection: () => {dispatch(resetDirection())}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginSignUp);

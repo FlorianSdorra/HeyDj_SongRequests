@@ -2,7 +2,6 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-
 import ReactFullpage from "@fullpage/react-fullpage";
 import heydjghost09 from "../assets/HeyDjGhost-04.png";
 import heydjghost17 from "../assets/HeyDjGhost-17.png";
@@ -11,24 +10,18 @@ import logo from "../assets/logo.png";
 
 import {setDirection} from '../actions'
 
-
-
 class LandingPage extends React.Component{
-
     render(){
-
     const handleDirection = (e) =>{
         const direction = e.target.value;
         this.props.changeDirection(direction)
     }
 
     const direction = this.props.direction;
-    
-    
    return direction === "login" ? (
        <Redirect push to="/login" />
    ) : direction === "eventsearch" ? (
-       <Redirect push to="/eventoverview" />
+       <Redirect push to="/eventsearch" />
    ) : (
             <ReactFullpage
                 //full page options

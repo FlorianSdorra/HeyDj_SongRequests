@@ -5,6 +5,9 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import logo from "../assets/logo.png";
 
 class TrackSearch extends React.Component {
+
+    componentDidMount(){console.log(this.props)};
+
     render() {
         return (
             <ReactFullpage

@@ -5,10 +5,19 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import logo from "../assets/logo.png";
 import eventPic from "../assets/eventPic-01.png";
 
+import {resetDirection} from '../actions';
+
 class EventOverview extends React.Component {
+
+    componentDidMount(){
+        console.log(this.props)
+        return this.props.resetDirection();
+    };
+
     render() {
         console.log(this.props)
         return (
+            
             <ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
@@ -373,4 +382,11 @@ const mapStateToProps = (state) => {
     return state;
 };
 
-export default connect(mapStateToProps, {})(EventOverview);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        resetDirection: () => {dispatch(resetDirection())}
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventOverview);
