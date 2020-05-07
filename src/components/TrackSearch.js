@@ -4,8 +4,14 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
 
+import {resetDirection} from '../actions'
+
 
 class TrackSearch extends React.Component {
+
+    componentDidMount(){
+        return this.props.resetDirection();
+    }
 
     render() {
         return (
@@ -283,4 +289,10 @@ const mapStateToProps = (state) => {
     return state;
 };
 
-export default connect(mapStateToProps, {})(TrackSearch);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        resetDirection: () => {dispatch(resetDirection())},
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrackSearch);

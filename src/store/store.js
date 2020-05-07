@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import voteReducer from "../reducers/voteReducer";
+import mainReducer from "../reducers/mainReducer";
 
 const initialState = {
     direction: "",
@@ -24,10 +24,8 @@ const initialState = {
     }
 };
 
-const store = createStore(voteReducer, initialState);
+const store = createStore(mainReducer, initialState);
 
-// console.log(store.getState())
-// console.log(store)
 export default store;
 
 

@@ -11,24 +11,21 @@ import {resetDirection, setDirection} from '../actions';
 class EventOverview extends React.Component {
 
     componentDidMount(){
-        console.log(this.props)
         return this.props.resetDirection();
     };
 
     render() {
-        console.log(this.props)
-
+        
         const handleDirection = (e) =>{
             const direction = e.target.value;
-            console.log(e.target);
-            this.props.changeDirection(direction)
+            this.props.setDirection(direction)
         }
 
         const direction = this.props.direction;
 
         return direction === "tracksearch" ? (
-            <Redirect push to="/tracksearch"/>) :  
-            (<ReactFullpage
+            <Redirect push to="/tracksearch"/>
+            ) : (<ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
                 scrollingSpeed={1000}
@@ -395,7 +392,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         resetDirection: () => {dispatch(resetDirection())},
-        changeDirection: (direction) => {dispatch(setDirection(direction))}
+        setDirection: (direction) => {dispatch(setDirection(direction))}
     }
 }
 

@@ -1,5 +1,5 @@
 
-const voteReducer = (state, action) => {
+const mainReducer = (state, action) => {
     switch (action.type){
         case "SET_DIRECTION":
             return{
@@ -17,4 +17,4 @@ const voteReducer = (state, action) => {
 
 
 
-export default voteReducer;
+export default mainReducer;

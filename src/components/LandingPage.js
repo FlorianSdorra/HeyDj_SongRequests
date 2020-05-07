@@ -8,13 +8,18 @@ import heydjghost17 from "../assets/HeyDjGhost-17.png";
 
 import logo from "../assets/logo.png";
 
-import {setDirection} from '../actions'
+import {setDirection, resetDirection} from '../actions'
 
 class LandingPage extends React.Component{
+
+    componentDidMount(){
+        return this.props.resetDirection();
+    };
+
     render(){
     const handleDirection = (e) =>{
         const direction = e.target.value;
-        this.props.changeDirection(direction)
+        this.props.setDirection(direction)
     }
 
     const direction = this.props.direction;
@@ -220,17 +225,15 @@ class LandingPage extends React.Component{
         );
    }}
 
-
-
 const mapStateToProps = (state) => {
     return state
 };
 
 const mapDispatchToProps = (dispatch) => {
         return {
-            changeDirection: (direction) => {dispatch(setDirection(direction))}
+            resetDirection: () => {dispatch(resetDirection())},
+            setDirection: (direction) => {dispatch(setDirection(direction))}
         }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

@@ -8,17 +8,16 @@ import logo from "../assets/logo.png";
 import {setDirection,resetDirection} from '../actions';
 
 class EventSearchResult extends React.Component {
+    
     componentDidMount(){
         return this.props.resetDirection();
     };
 
     render() {
-        console.log(this.props)
-
         const handleDirection = (e) =>{
             // const direction = e.target.value;
             // console.log(e.target);
-            this.props.changeDirection("eventoverview")
+            this.props.setDirection("eventoverview")  // need to find a solution for this sloppy solution / making divs button?
         }
 
         const direction = this.props.direction;
@@ -214,7 +213,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         resetDirection: () => {dispatch(resetDirection())},
-        changeDirection: (direction) => {dispatch(setDirection(direction))}
+        setDirection: (direction) => {dispatch(setDirection(direction))}
     }
 }
 
