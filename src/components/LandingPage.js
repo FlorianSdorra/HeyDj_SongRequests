@@ -8,21 +8,24 @@ import heydjghost17 from "../assets/HeyDjGhost-17.png";
 
 import logo from "../assets/logo.png";
 
-import {setDirection, resetDirection} from '../actions'
+import {setDirection, resetDirection} from '../actions';
 
 class LandingPage extends React.Component{
-
-    componentDidMount(){
-        return this.props.resetDirection();
+    constructor(){
+        super();
+        this.handleDirection = this.handleDirection.bind(this);
     };
-
-    render(){
-    const handleDirection = (e) =>{
+    handleDirection(e){
         const direction = e.target.value;
         this.props.setDirection(direction)
     }
 
-    const direction = this.props.direction;
+    componentDidMount(){
+        return this.props.resetDirection()
+    };
+
+    render(){
+    const {direction} = this.props;
    return direction === "login" ? (
        <Redirect push to="/login" />
    ) : direction === "eventsearch" ? (
@@ -43,7 +46,7 @@ class LandingPage extends React.Component{
                                 <div className="container">
                                     <header className="links">
                                         <img src={logo} alt="" />
-                                        <button className="fs16 red" onClick={handleDirection} value="login">
+                                        <button className="fs16 red" onClick={this.handleDirection} value="login">
                                             Login
                                         </button>
                                         {/* <button className="fs16 red">
@@ -98,7 +101,7 @@ class LandingPage extends React.Component{
                                         </div>
                                     </div>
                                     <div className="center fs16 reg">
-                                        <button onClick={handleDirection} value="eventsearch" className="white"> 
+                                        <button onClick={this.handleDirection} value="eventsearch" className="white"> 
                                             Search
                                         </button>
                                     </div>

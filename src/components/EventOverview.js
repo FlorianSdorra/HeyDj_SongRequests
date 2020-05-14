@@ -9,19 +9,22 @@ import eventPic from "../assets/eventPic-01.png";
 import {resetDirection, setDirection} from '../actions';
 
 class EventOverview extends React.Component {
+    constructor(){
+        super();
+        this.handleDirection = this.handleDirection.bind(this);
+    };
+    handleDirection(e){
+        const direction = e.target.value;
+        this.props.setDirection(direction)
+    }
 
     componentDidMount(){
         return this.props.resetDirection();
     };
 
     render() {
-        
-        const handleDirection = (e) =>{
-            const direction = e.target.value;
-            this.props.setDirection(direction)
-        }
 
-        const direction = this.props.direction;
+        const {direction} = this.props;
 
         return direction === "tracksearch" ? (
             <Redirect push to="/tracksearch"/>
@@ -58,7 +61,7 @@ class EventOverview extends React.Component {
                                         ></img>
                                     </div>
                                     <div className="center fs16 reg">
-                                        <button onClick={handleDirection} value="tracksearch" className="green">
+                                        <button onClick={this.handleDirection} value="tracksearch" className="green">
                                             Add song&nbsp;request
                                         </button>
                                     </div>

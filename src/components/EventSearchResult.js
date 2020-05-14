@@ -8,19 +8,23 @@ import logo from "../assets/logo.png";
 import {setDirection,resetDirection} from '../actions';
 
 class EventSearchResult extends React.Component {
+    constructor(){
+        super();
+        this.handleDirection = this.handleDirection.bind(this);
+    }
     
+    handleDirection = (e) =>{
+        // const direction = e.target.value;
+        // console.log(e.target);
+        this.props.setDirection("eventoverview")  // need to find a solution for this sloppy solution / making divs button?
+    }
     componentDidMount(){
         return this.props.resetDirection();
     };
 
     render() {
-        const handleDirection = (e) =>{
-            // const direction = e.target.value;
-            // console.log(e.target);
-            this.props.setDirection("eventoverview")  // need to find a solution for this sloppy solution / making divs button?
-        }
 
-        const direction = this.props.direction;
+        const {direction} = this.props;
 
         return direction === "eventoverview" ? (
             <Redirect push to="/eventoverview"/>) : 
@@ -77,7 +81,7 @@ class EventSearchResult extends React.Component {
                                             <div className="result-image-container">
                                                 <div className="result-image event-03"></div>
                                             </div>
-                                            <div onClick={handleDirection} value="eventoverview" className="result-info-container">
+                                            <div onClick={this.handleDirection} value="eventoverview" className="result-info-container">
                                                 <p>23/04/20</p>
                                                 <p>Fvck Genres</p>
                                                 <hr />

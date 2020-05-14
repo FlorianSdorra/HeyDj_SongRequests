@@ -4,7 +4,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
 
-import {setDirection, resetDirection} from '../actions';
+import {resetDirection} from '../actions';
 
 class LoginSignUp extends React.Component {
     
@@ -14,7 +14,6 @@ class LoginSignUp extends React.Component {
 
     render() {
         return (
-            console.log(this.props.direction),
             <ReactFullpage
                 //full page options
                 licenseKey={"YOUR_KEY_HERE"}
