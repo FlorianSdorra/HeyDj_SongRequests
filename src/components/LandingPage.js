@@ -25,7 +25,8 @@ class LandingPage extends React.Component{
     };
 
     render(){
-    const {direction} = this.props;
+    const direction = this.props.direction
+
    return direction === "login" ? (
        <Redirect push to="/login" />
    ) : direction === "eventsearch" ? (
@@ -38,7 +39,7 @@ class LandingPage extends React.Component{
                 loopBottom={true}
                 navigation
                 navigationPosition={"left"} /* Options here */
-                render={({ state, fullpageApi }) => {
+                render={({state, fullpageApi }) => {
                     return  (
                         
                         <ReactFullpage.Wrapper>
@@ -229,8 +230,7 @@ class LandingPage extends React.Component{
    }}
 
 const mapStateToProps = (state) => {
-    return state
-};
+    return {direction: state.direction};};
 
 const mapDispatchToProps = (dispatch) => {
         return {
