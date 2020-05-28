@@ -1,8 +1,5 @@
 const initialState = {
-    direction: "",
-    eventSearch: [],
-    isFetching: false,
-    error: null
+    direction: ""
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -16,23 +13,6 @@ const mainReducer = (state = initialState, action) => {
             return{
                 ...state,
                 direction:""
-            };
-        case "EVENT_SEARCH_START_FETCH":
-            return{
-                ...state,
-                isFetching: true
-            };
-        case "EVENT_SEARCH_FINISH_FETCH":
-            return{
-                ...state,
-                isFetching: false,
-                eventSearch: action.data
-            }
-        case "EVENT_SEARCH_FAIL_FETCH":
-            return{
-                ...state,
-                isFetching: false,
-                error: action.payload
             }
 
     default:

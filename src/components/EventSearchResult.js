@@ -6,8 +6,6 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import logo from "../assets/logo.png";
 
 import {setDirection,resetDirection} from '../actions';
-import getEvents from '../lib/helpers'
-
 class EventSearchResult extends React.Component {
     constructor(){
         super();
@@ -15,7 +13,7 @@ class EventSearchResult extends React.Component {
     }
     
     componentDidMount(){
-        return this.props.resetDirection() + this.props.getEvents();
+        return this.props.resetDirection();
 
         // first
         // fetch all events from https://heydj-api.floriansdorra87.now.sh/events 
@@ -229,7 +227,6 @@ const mapDispatchToProps = (dispatch) => {
     return {
         resetDirection: () => {dispatch(resetDirection())},
         setDirection: (direction) => {dispatch(setDirection(direction))},
-        getEvents: () => {dispatch(getEvents)}
 
     }
 }
