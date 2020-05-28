@@ -1,5 +1,11 @@
+const initialState = {
+    direction: "",
+    eventSearch: [],
+    isFetching: false,
+    error: null
+};
 
-const mainReducer = (state, action) => {
+const mainReducer = (state = initialState, action) => {
     switch (action.type){
         case "SET_DIRECTION":
             return{

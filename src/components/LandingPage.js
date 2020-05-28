@@ -27,6 +27,8 @@ class LandingPage extends React.Component{
     render(){
     const direction = this.props.direction
 
+    console.log(this.props)
+
    return direction === "login" ? (
        <Redirect push to="/login" />
    ) : direction === "eventsearch" ? (
@@ -230,7 +232,8 @@ class LandingPage extends React.Component{
    }}
 
 const mapStateToProps = (state) => {
-    return {direction: state.direction};};
+    return state;
+};
 
 const mapDispatchToProps = (dispatch) => {
         return {
