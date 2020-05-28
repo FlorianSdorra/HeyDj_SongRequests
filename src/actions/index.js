@@ -15,8 +15,10 @@ export const startFetchEventSearch = () => ({
     type: "EVENT_SEARCH_START_FETCH"
 });
 
-export const EVENT_SEARCH_FAIL_FETCH = () => ({
-    type: "EVENT_SEARCH_FAIL_FETCH"
+export const EVENT_SEARCH_FAIL_FETCH = error => ({
+    type: "EVENT_SEARCH_FAIL_FETCH",
+    payload: error
+    
 });
 
 export const EVENT_SEARCH_FINISH_FETCH = data => ({
