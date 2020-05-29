@@ -30,7 +30,7 @@ export const removeFavoriteTerm = name => ({
     }
 });
 
-const apiUrl = 'https://www.techiediaries.com/api/data.json';
+const apiUrl = 'https://heydj-api.floriansdorra87.now.sh/events';
 
 export const fetchData = () => {
     return (dispatch) => {
