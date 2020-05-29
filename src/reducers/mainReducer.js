@@ -1,5 +1,8 @@
+import { ADD_FETCHED_DATA } from '../actions/types';
+
 const initialState = {
-    direction: ""
+    direction: "",
+    fetch: []
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -13,6 +16,11 @@ const mainReducer = (state = initialState, action) => {
             return{
                 ...state,
                 direction:""
+            }
+        case ADD_FETCHED_DATA:
+            return{
+                ...state,
+                fetch: [...action.payload]
             }
 
     default:
