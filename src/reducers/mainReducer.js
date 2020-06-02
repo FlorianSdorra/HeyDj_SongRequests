@@ -1,18 +1,18 @@
-import { ADD_FETCHED_DATA } from '../actions/types';
+import { ADD_FETCHED_DATA, SET_DIRECTION, RESET_DIRECTION } from '../actions/types';
 
 const initialState = {
     direction: "",
-    fetch: []
+    fetch: null
 };
 
 const mainReducer = (state = initialState, action) => {
     switch (action.type){
-        case "SET_DIRECTION":
+        case SET_DIRECTION:
             return{
                 ...state,
                 direction: action.direction
             };
-        case "RESET_DIRECTION":
+        case RESET_DIRECTION:
             return{
                 ...state,
                 direction:""

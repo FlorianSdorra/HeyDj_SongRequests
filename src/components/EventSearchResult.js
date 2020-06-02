@@ -5,24 +5,29 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
 
-import {setDirection,resetDirection} from '../actions';
+import {setDirection,resetDirection, fetchData} from '../actions';
 class EventSearchResult extends React.Component {
     constructor(){
         super();
         this.handleDirection = this.handleDirection.bind(this);
     }
     
+
     componentDidMount(){
-        return this.props.resetDirection();
+        return [this.props.fetchData(), this.props.resetDirection()]
 
         // first
         // fetch all events from https://heydj-api.floriansdorra87.now.sh/events 
+
+        
 
         // then list the events here with event components
 
         // then implement search from landing page
         
     };
+
+    
 
     handleDirection = (e) =>{
         // const direction = e.target.value;
@@ -32,9 +37,8 @@ class EventSearchResult extends React.Component {
     
 
     render() {
-
-        const {direction} = this.props;
         console.log(this.props);
+        const {direction} = this.props;
         return direction === "eventoverview" ? (
             <Redirect push to="/eventoverview"/>) : 
             direction === "logout"? (
@@ -227,6 +231,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         resetDirection: () => {dispatch(resetDirection())},
         setDirection: (direction) => {dispatch(setDirection(direction))},
+        fetchData: () => {dispatch(fetchData())}
 
     }
 }

@@ -14,7 +14,7 @@ export const resetDirection = () => ({
 
 //FETCHING EVENTS IN /EVENTSEARCH
 
-
+// kann man verwenden für EVENTSUCHE
 export const addFavoriteTerm = (data) => ({
     type: ADD_FAVORITE_TERM,
     payload: {
