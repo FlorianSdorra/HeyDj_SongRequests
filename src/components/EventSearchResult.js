@@ -14,19 +14,17 @@ class EventSearchResult extends React.Component {
     
 
     componentDidMount(){
-        return [this.props.fetchData(), this.props.resetDirection()]
+        return [this.props.resetDirection(), this.props.fetchData()]
+        // then list the events here with event components,
 
-        // first
-        // fetch all events from https://heydj-api.floriansdorra87.now.sh/events 
-
-        
-
-        // then list the events here with event components
+        // 
 
         // then implement search from landing page
-        
     };
 
+    componentDidUpdate(){
+        console.log(this.props.fetch.map(el => el.title));
+    }
     
 
     handleDirection = (e) =>{
@@ -37,7 +35,7 @@ class EventSearchResult extends React.Component {
     
 
     render() {
-        console.log(this.props);
+        
         const {direction} = this.props;
         return direction === "eventoverview" ? (
             <Redirect push to="/eventoverview"/>) : 
