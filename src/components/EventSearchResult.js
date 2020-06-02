@@ -5,27 +5,38 @@ import ReactFullpage from "@fullpage/react-fullpage";
 
 import logo from "../assets/logo.png";
 
-import {setDirection,resetDirection} from '../actions';
-
+import {setDirection,resetDirection, fetchData} from '../actions';
 class EventSearchResult extends React.Component {
     constructor(){
         super();
         this.handleDirection = this.handleDirection.bind(this);
     }
     
+
+    componentDidMount(){
+        return [this.props.resetDirection(), this.props.fetchData()]
+        // then list the events here with event components,
+
+        // 
+
+        // then implement search from landing page
+    };
+
+    componentDidUpdate(){
+        console.log(this.props.fetch.map(el => el.title));
+    }
+    
+
     handleDirection = (e) =>{
         // const direction = e.target.value;
         // console.log(e.target);
         this.props.setDirection("eventoverview")  // need to find a solution for this sloppy solution / making divs button?
     }
-    componentDidMount(){
-        return this.props.resetDirection();
-    };
+    
 
     render() {
-
+        
         const {direction} = this.props;
-
         return direction === "eventoverview" ? (
             <Redirect push to="/eventoverview"/>) : 
             direction === "logout"? (
@@ -217,7 +228,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         resetDirection: () => {dispatch(resetDirection())},
-        setDirection: (direction) => {dispatch(setDirection(direction))}
+        setDirection: (direction) => {dispatch(setDirection(direction))},
+        fetchData: () => {dispatch(fetchData())}
+
     }
 }
 

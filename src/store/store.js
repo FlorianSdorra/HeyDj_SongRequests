@@ -1,11 +1,16 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
 import mainReducer from "../reducers/mainReducer";
 
-const initialState = {
-    direction: ""
-};
+import {fetchData} from '../actions/index'
 
-const store = createStore(mainReducer, initialState);
+
+const store = createStore(
+    mainReducer,
+    applyMiddleware(thunk)
+    );
+
+// store.dispatch(fetchData());
 
 export default store;
 
