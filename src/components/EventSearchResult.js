@@ -2,10 +2,11 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
+import {fullpageApi} from   "@fullpage/react-fullpage"
 
 import logo from "../assets/logo.png";
 
-import {setDirection,resetDirection, fetchData} from '../actions';
+import {setDirection,resetDirection} from '../actions';
 class EventSearchResult extends React.Component {
     constructor(){
         super();
@@ -14,7 +15,7 @@ class EventSearchResult extends React.Component {
     
 
     componentDidMount(){
-        return [this.props.resetDirection(), this.props.fetchData()]
+        return [this.props.resetDirection()]
         // then list the events here with event components,
 
         // 
@@ -22,9 +23,6 @@ class EventSearchResult extends React.Component {
         // then implement search from landing page
     };
 
-    componentDidUpdate(){
-        console.log(this.props.fetch.map(el => el.title));
-    }
     
 
     handleDirection = (e) =>{
@@ -35,7 +33,40 @@ class EventSearchResult extends React.Component {
     
 
     render() {
+        console.log(this.props);
+
+        const eventList = this.props.fetch.map(el=> 
+        <div className="result-list-item">
+            <div className="result-image-container">
+                <div className="result-image event-03"></div>
+            </div>
+            <div onClick={this.handleDirection} value="eventoverview" className="result-info-container">
+                <p>{el.date}</p>
+                <p>{el.name}</p>
+                <hr />
+                <p>{el.location}</p>
+            </div>
+        </div>);
+
+        function addItemEvery(arr, item, starting, frequency) {
+            for (var i = 0, a = []; i < arr.length; i++) {
+            a.push(arr[i]);
+            if ((i + 1 + starting) % frequency === 0) {
+             a.push(item);
+            i++;
+            if(arr[i]) a.push(arr[i]);
+            }
+            }
+            return a;
+            }
+
+        const test = "test";
+
+        const solution = addItemEvery(eventList, test, 3, 4);
+
+        console.log(solution)
         
+
         const {direction} = this.props;
         return direction === "eventoverview" ? (
             <Redirect push to="/eventoverview"/>) : 
@@ -88,61 +119,9 @@ class EventSearchResult extends React.Component {
                                         </div>
                                     </div>
                                     <div className="result-list-wrap">
-                                        <div className="result-list-item">
-                                            <div className="result-image-container">
-                                                <div className="result-image event-03"></div>
-                                            </div>
-                                            <div onClick={this.handleDirection} value="eventoverview" className="result-info-container">
-                                                <p>23/04/20</p>
-                                                <p>Fvck Genres</p>
-                                                <hr />
-                                                <p>Musik&#38;Frieden</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="result-list-item">
-                                            <div className="result-image-container">
-                                                <div className="result-image event-02"></div>
-                                            </div>
-                                            <div className="result-info-container">
-                                                <p>24/04/20</p>
-                                                <p>Lass Zocken</p>
-                                                <hr />
-                                                <p>Lido Berlin</p>
-                                            </div>
-                                        </div>
-
-                                        <div className="result-list-item">
-                                            <div className="result-image-container">
-                                                <div className="result-image event-01"></div>
-                                            </div>
-                                            <div className="result-info-container">
-                                                <p>01/05/20</p>
-                                                <p>The early days</p>
-                                                <hr />
-                                                <p>Lido Berlin</p>
-                                            </div>
-                                        </div>
+                                    {/* {solution} */}
                                     </div>
 
-                                    <div className="center">
-                                        <button
-                                            className="fs16 white"
-                                            onClick={() =>
-                                                fullpageApi.moveSectionDown()
-                                            }
-                                        >
-                                            More results
-                                        </button>
-                                        <div
-                                            className="arrow"
-                                            onClick={() =>
-                                                fullpageApi.moveSectionDown()
-                                            }
-                                        >
-                                            <i className="bt-down"></i>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
@@ -228,8 +207,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         resetDirection: () => {dispatch(resetDirection())},
-        setDirection: (direction) => {dispatch(setDirection(direction))},
-        fetchData: () => {dispatch(fetchData())}
+        setDirection: (direction) => {dispatch(setDirection(direction))}
 
     }
 }

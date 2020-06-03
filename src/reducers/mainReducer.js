@@ -2,7 +2,7 @@ import { ADD_FETCHED_DATA, SET_DIRECTION, RESET_DIRECTION } from '../actions/typ
 
 const initialState = {
     direction: "",
-    fetch: null
+    fetch: []
 };
 
 const mainReducer = (state = initialState, action) => {
