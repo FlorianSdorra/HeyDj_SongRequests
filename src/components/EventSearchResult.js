@@ -2,7 +2,6 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import ReactFullpage from "@fullpage/react-fullpage";
-import {fullpageApi} from   "@fullpage/react-fullpage"
 
 import logo from "../assets/logo.png";
 
@@ -60,9 +59,37 @@ class EventSearchResult extends React.Component {
             return a;
             }
 
-        const test = "test";
+        const test = <ReactFullpage
+        //full page options
+        licenseKey={"YOUR_KEY_HERE"}
+        scrollingSpeed={1000}
+        loopBottom={true}
+        navigation
+        navigationPosition={"left"} /* Options here */
+        render={({ state, fullpageApi }) => {
+            return (
+                <ReactFullpage.Wrapper>
+                    <div className="center">
+                                        <button
+                                            className="fs16 white"
+                                            onClick={() =>
+                                                fullpageApi.moveSectionDown()
+                                            }
+                                        >
+                                            More results
+                                        </button>
+                                        <div
+                                            className="arrow"
+                                            onClick={() =>
+                                                fullpageApi.moveSectionDown()
+                                            }
+                                        >
+                                            <i className="bt-down"></i>
+                                        </div>
+                                    </div>
+                </ReactFullpage.Wrapper>)}}/>;
 
-        const solution = addItemEvery(eventList, test, 3, 4);
+        const solution = addItemEvery(eventList, test, 2, 4);
 
         console.log(solution)
         
@@ -119,7 +146,7 @@ class EventSearchResult extends React.Component {
                                         </div>
                                     </div>
                                     <div className="result-list-wrap">
-                                    {/* {solution} */}
+                                    {solution}
                                     </div>
 
                                 </div>
